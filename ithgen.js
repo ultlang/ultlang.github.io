@@ -91,10 +91,8 @@ function geminate(ca) {
 		return ca.charAt(0) + ca;
 	} else { return ca + " (ERROR) ";}
 }
-
 function genWord(opts = {}) {
 	/* Ca format: [affiliation, configuration, extension, perspective, essence] */
-
 	//#region default values
 		var root = opts.root === undefined ? "l" : opts.root;
 		var stem = opts.stem === undefined ? 1 : opts.stem;
@@ -120,15 +118,28 @@ function genWord(opts = {}) {
 		var expectation = opts.expectation === undefined ? "COG" :opts.expectation;
 	//#endregion
 
-	//#region slot 2
+	//#region empty strings in slots
+		slot2 = "";
+		slot3 = "";
+		slot4 = "";
+		slot5 = "";
+		slot6 = "";
+		slot7 = "";
+		slot8 = "";
+		slot9 = "";
+	//#endregion
+
+	function genSlot2() {
 		slot2 = vSq.sq1 [ 2 * ((stem + 3) % 4) + versions.indexOf(version) ] ;
-	//#endregion slot 2
+	}
+	genSlot2()
 
-	//#region slot 3
+	function genSlot3() {
 		slot3 = root;
-	//#endregion slot 3
+	}
+	genSlot3()
 
-	//#region slot 4
+	function genSlot4() {
 		slot4vSq = "ssq" + (contexts.indexOf(context) + 1).toString();
 		if ((contexts.indexOf(context) + 1).toString() == "3") {
 			if (slot3.charAt(slot3.length - 1) == "w") {
@@ -138,10 +149,10 @@ function genWord(opts = {}) {
 			}
 		}
 		slot4 = vSq [slot4vSq] [specifications.indexOf(specification) + 4*gFunctions.indexOf(gFunction)];
-	//#endregion slot 4
+	}
+	genSlot4();
 
-	//#region slot 5
-		slot5 = ""
+	function genSlot5() {
 		slotVFilled = false
 		if (affixesV.length > 0) {
 
@@ -165,11 +176,10 @@ function genWord(opts = {}) {
 				slot5 += [ modifiedVSq [affixesV[i][1]] ]
 			}
 		}
-	//#endregion slot 5
+	}
+	genSlot5();
 
-	function genSlot6 () {
-		slot6 = ""
-
+	function genSlot6() {
 		standaloneAffiliation = 0
 		alternateExtension = 0
 		standalonePerspectiveEssence = 0
@@ -222,8 +232,7 @@ function genWord(opts = {}) {
 	}
 	genSlot6();
 
-	//#region slot 7
-		slot7 = ""
+	function genSlot7() {
 		if (affixesVII.length > 0) {
 			for (i = 0; i < affixesVII.length; i++) {
 
@@ -244,9 +253,10 @@ function genWord(opts = {}) {
 				slot7 += affixesVII[i][0]; //Cs
 			}
 		}
-	//#endregion
+	}
+	genSlot7();
 
-	//#region slot 8
+	function genSlot8() {
 		slot8 = "";
 		cBefore = slot7 == "" ? slot6 : slot7;
 		if (VPLEAs.indexOf(VPLEA) % 36 >= 0 && VPLEAs.indexOf(VPLEA) % 36 <= 8) {
@@ -276,11 +286,12 @@ function genWord(opts = {}) {
 
 		if (slot8 == "ah") { slot8 = ""; }
 
-	//#endregion
+	}
+	genSlot8();
 
-	//#region slot 9
-		slot9 = ""
-		slot9vSq = "sq3"
+	function genSlot9() {
+		slot9 = "";
+		slot9vSq = "sq3";
 		if (slot7 != "") {
 			if (slot7.charAt(slot7.length - 1) == "w") {
 				slot9vSq += "w";
@@ -295,7 +306,7 @@ function genWord(opts = {}) {
 			}
 		}
 
-		if (stress == 2 || stress == 3) {
+		if (stress == 2 || stress == 3) /* case */{
 			gCaseIndex = gCases.indexOf(gCase);
 			if		(gCaseIndex >= 0  && gCaseIndex <= 8 ) {
 				slot9 = vSq.sq1[gCaseIndex];
@@ -314,16 +325,13 @@ function genWord(opts = {}) {
 			} else if (gCaseIndex >= 60 && gCaseIndex <= 67) {
 				slot9 = glottalise( vSq.cssq4[gCaseIndex - 60] );
 			}
-		}   else {
-			//illocution, expectation, & validation
+		} else /* expectation & validation */     {
 			slot9 = vSq ["sq" + (expectations.indexOf(expectation) + 1)] [validations.indexOf(validation)];
 		}
+	}
+	genSlot9();
 
-	//#endregion
-
-	word = slot2 + slot3 + slot4 + slot5 + slot6 + slot7 + slot8 + slot9;
-
-	//#region slot 10
+	function applyStress(word) {
 		var matches = []
 		if (stress != 2) {
 			var re = /ai|äi|ei|ëi|oi|öi|ui|au|eu|ëu|ou|iu|a|e|i|o|u|ä|ë|ö|ü/g
@@ -340,9 +348,9 @@ function genWord(opts = {}) {
 				stressedVowel = stressedVowel.replace(from[i], to[i]);
 			}
 
-			word = word.substring(0,matches[matches.length - stress]) + stressedVowel + word.substring(matches[matches.length - stress] + 1)
+			return word.substring(0,matches[matches.length - stress]) + stressedVowel + word.substring(matches[matches.length - stress] + 1)
 		}
-	//#endregion
+	}
 
-	return word;
+	return applyStress(slot2 + slot3 + slot4 + slot5 + slot6 + slot7 + slot8 + slot9);
 }
