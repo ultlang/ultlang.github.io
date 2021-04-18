@@ -347,10 +347,9 @@ function genWord(opts = {}) {
 			for (i = 0; i < from.length; i++) {
 				stressedVowel = stressedVowel.replace(from[i], to[i]);
 			}
-
-			return word.substring(0,matches[matches.length - stress]) + stressedVowel + word.substring(matches[matches.length - stress] + 1)
-		}
+			result = word.substring(0,matches[matches.length - stress]) + stressedVowel + word.substring(matches[matches.length - stress] + 1);
+		} else {result = word;}
+		return result;
 	}
-
 	return applyStress(slot2 + slot3 + slot4 + slot5 + slot6 + slot7 + slot8 + slot9);
 }
