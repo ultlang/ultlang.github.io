@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ithgen™</title>
+	<script src="ithgen.js"></script>
+	<script>
+		function out() {
+			input = document.getElementById("input").value;
+			output = document.getElementById("output");
+			output.innerHTML = genWord(JSON.parse(input));
+		} 
+		//console.log(genWord( { root: "md", stem: 2, version: "CPT", function: "DYN", specification: "OBJ", context: "AMG", stress: "1", validation: "CVN", expectation: "RSP", affixesV: [["nt", 1, 1]], affixesVII: [["mk", 8, 2]], ca: ["ASO","MSS","PRX","G","RPV"], VPLEA: "2:BEN" } ));
+	</script>
+</head>
+<body>
+		<h1 id="output">input json.</h1>
+		<textarea id="input" rows="15" cols="30">
+{
+"root": "kft",
+"essence": "RPV"
+}
+</textarea>
+
+		<button onclick="out()">generate !</button>
+</body>
+</html>

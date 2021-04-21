@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter.woff2') format('woff2'),
+        url('Inter.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+html {
+	background-color: rgb(234, 146, 241);
+	font-family: Inter, sans-serif;
+}
