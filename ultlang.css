@@ -13,3 +13,21 @@ html {
 	background-color: rgb(234, 146, 241);
 	font-family: Inter, sans-serif;
 }
+main {
+	width: min(45em, 90%);
+	text-align: center;
+	margin: auto;
+}
+p {
+	font-size: 20px;
+	font-weight: 500;
+}
+h1 {
+	font-size: 42px;
+	font-weight: 200;
+}
+hr {
+	border-style:none;
+	border-top: 1px solid black;
+	
+}
