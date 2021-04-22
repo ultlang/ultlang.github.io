@@ -1,24 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title>ultlang's webpage.</title>
-  <meta name="description" content="ultlang's webpage.">
-  <meta name="author" content="ultlang">
-
-  <link rel="stylesheet" href="ultlang.css">
+	<meta charset="utf-8">
+  	<title>ultlang's webpage.</title>
+  	<meta name="description" content="ultlang's webpage.">
+  	<meta name="author" content="ultlang">
+  	<link rel="stylesheet" href="ultlang.css">
 
 </head>
 
 <body>
 	<main>
 		<h1> Welcome to ULTLANG WEBPAGE; the place of WEBPAGE and ULTLANG. </h1>
-		<p>  you will not find any meaningful INFORMATION here .</p>
+		<p><s>  you will not find any meaningful INFORMATION here . <br>there is no meaningful INFORMATION on this page . </s></p>
+		<p class="small"> update: there is now a small amount of meaningful INFORMATION. </p>
 		<hr>
-		<p>  there is no meaningful INFORMATION on this page .</p>
-		<hr>
-		<p>  ðð]]]ɣ. ;;;;;§ ඞj 51555½, わ .</p>
+		<a href="https://ultlang.bandcamp.com">"Bandcamp" link.</a>
+		<p class="small"> fresh randomly generated gibberish:</p>
+		<p id="gibberish">  ðð]]]ɣ. ;;;;;§ ඞj 51555½, わ .</p>
+		<!--
+		<p class="small"> Note: this GEORGE footer is configured for ubq323.website. There is no George for this website yet. </p>
+		<iframe id="georgation" height="50" src="https://george.gh0.pw/embed.cgi?ubq323" style="border:none;width:100%"></iframe>
+		-->
 	</main>
+	
 </body>
+
+<script>
+	gibberish = document.getElementById("gibberish");
+	gibberish.innerHTML = "";
+	symbols = ["ð",";","§","ඞ",",",".","1","2","3","4","5","6","7","8","9","0","か","わ","に","ｗ","é","ó",",",";",",",";",".","-","-","/"];
+
+
+	for (i = 0; i < Math.floor(Math.random() * 5) + 3; i++) {
+		for (j = 0; j < Math.floor(Math.random() * 4) + 2; j++) {
+			chosenSymbol = symbols[ Math.floor(Math.random() * symbols.length) ];
+			for (let k = 0; k < Math.max(1, Math.floor(Math.random() * 15) - 8); k++) {
+				gibberish.innerHTML += chosenSymbol;
+			}
+		}
+		gibberish.innerHTML += " "
+	}
+</script>
+
 </html>
