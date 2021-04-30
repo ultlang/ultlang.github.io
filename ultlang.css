@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Inter';
-    src: url('Inter.woff2') format('woff2'),
-        url('Inter.woff') format('woff');
+    src: url('fonts/Inter.woff2') format('woff2'),
+        url('fonts/Inter.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -10,7 +10,7 @@
 
 
 html {
-	background-color: #f5b0e7;
+	background-color: #f5d4ee;
 	font-family: Inter, sans-serif;
 }
 main {
@@ -29,10 +29,6 @@ p.small {
 h1 {
 	font-size: 42px;
 	font-weight: 200;
-	color: #6c1d45;
-	color: #6c1d45;
-	color: #6c1d45;
-	color: #6c1d45;
 	color: #6c1d45;
 }
 hr {
