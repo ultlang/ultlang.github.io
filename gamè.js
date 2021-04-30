@@ -3,27 +3,41 @@ canvas.width = 1000;
 canvas.height = 1000;
 var c = canvas.getContext('2d');
 
-var susChiptune = document.createElement('audio');
-susChiptune.src = "audio/sus.wav";
-susChiptune.autoplay = true;
-susChiptune.volume = 0.4;
-susChiptune.loop = true;
-susChiptune.play(); 
+//#region audio
+	var susChiptune = document.createElement('audio');
+	susChiptune.src = "audio/sus.wav";
+	susChiptune.autoplay = true;
+	susChiptune.volume = 0.2;
+	susChiptune.loop = true;
+	susChiptune.play(); 
 
-var kill = document.createElement('audio');
-kill.src = "audio/kill.mp3";
+	var kill = document.createElement('audio');
+	kill.src = "audio/kill.mp3";
 
+	var mark = document.createElement('audio');
+	mark.src = "audio/vote.mp3";
+
+	var start = document.createElement('audio');
+	start.src = "audio/spawn.mp3";
+
+	var click = document.createElement('audio');
+	click.src = "audio/button.mp3";
+	click.volume = 0.2;
+//#endregion
 
 function setup() {
+	start.play();
+
+	sussy = 100000000000000000000000000000;
+
 	inProgress = true;
 	win = false;
+
 	clicks = 0;
 	size = 16;
 	checked = [];
-	i = 0;
+
 	intendedMineCount = 24;
-	markCount = intendedMineCount;
-	document.getElementById("marknum").innerHTML = "marks left: " + markCount;
 	mineCount = 0;
 	field = [];
 	seenField = [];
@@ -43,6 +57,10 @@ function setup() {
 			mineCount++;
 		}
 	}
+
+	markCount = intendedMineCount;
+	document.getElementById("marknum").innerHTML = "marks left: " + markCount;
+
 	window.requestAnimationFrame(loop);
 } setup();
 
@@ -70,6 +88,8 @@ function clickoid(x, y) {
 	if ( seenField[x][y] == "" && inProgress) {
 		if ( field[x][y] == "ඞ") {
 			if ( clicks == 0 ) {
+				click.currentTime = 0;
+				click.play();
 				field[x][y] = 0;
 				mineCount--;
 
@@ -82,13 +102,20 @@ function clickoid(x, y) {
 					}
 				}
 				clickoid(x,y);
+				timer = Date.now();
 			} else {
 			seenField[x][y] = "ඞ"
 			kill.currentTime = 0;
 			kill.play();
+			win=false;
 			setTimeout("inProgress = false;",1200);
 			}
 		} else {
+			click.currentTime = 0;
+			click.play();
+			if ( clicks == 0 ) {
+				timer = Date.now();
+			}
 			neighbours = [ [xminus,y], [xminus,yminus], [x,yminus], [xplus,yminus], [xplus,y], [xplus,yplus], [x,yplus], [xminus,yplus] ]
 			neighbours = [... new Set(neighbours)];
 			neighbours = removeDuplicates2D(neighbours);
@@ -122,10 +149,14 @@ function markoid(x, y) {
 	if ( seenField [x][y] == "" && markCount > 0 ) {
 		seenField[x][y] = "🚩︎";
 		markCount--;
+		mark.currentTime = 0;
+		mark.play();
 
 	} else if ( seenField [x][y] == "🚩︎" ) {
 		seenField[x][y] = "";
 		markCount++;
+		mark.currentTime = 0;
+		mark.play();
 	}
 	document.getElementById("marknum").innerHTML = "marks left: " + markCount;
 }
@@ -142,7 +173,7 @@ function shadedSquare(fill, upright, downleft, size, posx, posy, lwidth, text, t
 	c.lineTo(posx+size-(lwidth/2),posy+(lwidth));
 	c.strokeStyle = downleft;
 	c.stroke();
-	c.font = size/3*2 + "px Arial";
+	c.font = size/3*2 + "px Inter";
 	c.fillStyle = textcol;
 	c.textAlign = "center";
 	c.textBaseline = "middle"
@@ -158,24 +189,35 @@ function loop() {
 				shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width/size,x*canvas.width/size,y*canvas.height/size, 6, seenField[x][y], textcol[seenField[x][y]]);
 			}
 		}
-	} else {
-		c.fillStyle = "#f5b0e7";
-		c.fillRect(0,0,1000,1000);
+		if (markCount == 0 && ! (seenField.some(row => row.includes(""))) && ! (seenField.some(row => row.includes("ඞ"))) ) {
+			win=true;
+			finalTime = Math.min(sussy, (Date.now() - timer));
+			setTimeout("inProgress = false;",1200);
+		}
+	} else if ( !win ) {
+		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
 		c.fillStyle = "#000";
-		c.font = 100 + "px Arial";
+		c.font = 100 + "px Inter";
 		c.textAlign = "center";
 		c.textBaseline = "middle"
 		c.fillText("click to play again",500,500)
+	} else if (  win ) {
+		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
+		c.fillStyle = "#000";
+		c.font = 100 + "px Inter";
+		c.textAlign = "center";
+		c.textBaseline = "middle"
+		c.fillText("you won!",500,300)
+		c.font = 70 + "px Inter";
+		c.fillText("good job!",500,500)
+		c.font = 70 + "px Inter";
+		c.fillText(Math.round(finalTime*10 / 1000) / 10 + " seconds",500,600)
 	}
 
 	window.requestAnimationFrame(loop);
 }
 
-canvas.addEventListener('mousedown', function(event) {
-
-}, false);
-
-canvas.addEventListener('mouseup', function(event) {
+canvas.addEventListener('click', function(event) {
 
 	elemLeft = canvas.offsetLeft + canvas.clientLeft,
 	elemTop = canvas.offsetTop + canvas.clientTop,
@@ -194,11 +236,3 @@ canvas.addEventListener('contextmenu', function(event) {
 	markoid(Math.floor(x / (500/size)) , Math.floor(y / (500/size)));
 	event.preventDefault();
 }, false);
-
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-	// true for mobile device
-	document.write("mobile device");
-  }else{
-	// false for not mobile device
-	document.write("not mobile device");
-  }
