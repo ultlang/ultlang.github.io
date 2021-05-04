@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Charis';
+    src: url('../fonts/CharisSIL-R.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('../fonts/CharisSIL-B.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('../fonts/CharisSIL-I.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('../fonts/CharisSIL-BI.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+body {
+	font-family: "Charis";
+}
+
+main {
+	width: min(45em, 90%);
+	margin: auto;
+}
+
+article img {
+	width: 30%;
+	float: left;
+	margin-right: 10px;
+}
+article div {
+	display: inline;
+}
