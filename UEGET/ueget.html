@@ -1,12 +1,12 @@
 <link rel='stylesheet' href='ueget.css'><pre>
  
- Ultlang Epic Gamer Encoding Thing : Version 0.3
+ Ultlang Epic Gamer Encoding Thing : Version 0.4β
 
  UEGET TABLES:
  The tables have been moved into a <a href="tables.html">separate file</a>.
 
  BLOCKS:
-     PAGE 00:
+     PAGE 00 (Central Europe):
      %00 ~ %0f (00-HXN) : Hexadecimal Numbers,
      %10       (00-CCM) : Control Code Representation Marker,
      %11 ~ %1f (00-MTH) : Mathematics,
@@ -22,7 +22,7 @@
      %d7 ~ %ef (00-PLL) : Polish and Lithuanian,
      %fa ~ %ff (00-CCD) : Control Codes.
 
-     PAGE 01:
+     PAGE 01 (???):
      %00 ~ %0f (01-HXN) : Hexadecimal Numbers,
      %10       (01-CCM) : Control Code Representation Marker,
      %11 ~ %1f (01-MTH) : Mathematics,
@@ -100,15 +100,15 @@
      where ff represents full intensity of the light and 00 means it being
      turned off completely (therefore fcc99ff is a lavender colour).
      
-     The format of a COLOUR escapoid is ¤ec (%fd 72) followed by the
+     The format of a COLOUR escapoid is ¤ec (%fd 0c) followed by the
      colour representation. Therefore, the following should print a white
      "w", a pink "p" and a lime green "l":
-         %51 fd 72 09 59 fd 72 0f 04 03 0f 0f 00 00 68
+         %51 fd 72 09 59 fd 0c 0f 04 03 0f 0f 00 00 68
 
      BACKGROUND ESCAPOID:
      The BACKGROUND escapoid works in a similar way to the COLOUR one, except
-     the colour representation is slightly different and the format is ¤eC
-     (with a capital C, %fd a2.) Its default value is black.
+     the colour representation is slightly different and the format is ¤eb
+     (%fd 0b). Its default value is black.
      The colour representation codes are these:
          0 (%00) : black
          1 (%01) : white
@@ -127,10 +127,5 @@
          e (%0e) : gray
          f (%0f) : custom colour.
          (todo hex codes for these as well, possibly change palette)
-
-frenhc
-à │ è │ ù │ â │ ê │ î │ û │ ç │ ë │
-   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
- e │ ï │ ü │ œ │ À │ È │ Ù │ Â │ Ê │ Î │ Û │ Ç │ Ë │ Ï │ Ü │ Œ
  
 </pre>
