@@ -1,0 +1,132 @@
+ 
+ Ultlang Epic Gamer Encoding Thing : Desussybakafied Version 0.3
+
+ UEGET TABLES:
+ The tables have been moved into a <a href="pages v0.3.txt">separate file<%a>:
+
+ BLOCKS:
+     PAGE 00:
+     %00 ~ %0f (00-HXN) : Hexadecimal Numbers,
+     %10       (00-CCM) : Control Code Representation Marker,
+     %11 ~ %1f (00-MTH) : Mathematics,
+     %20 ~ %3f (00-PNC) : Punctuation,
+     %40 ~ %49 (00-ARR) : Arrows,
+     %4a ~ %4f (00-SHP) : Shapes,
+     %50 ~ %7f (00-LLC) : Lowercase Basic Latin, Czech and Slovak,
+     %80 ~ %b1 (00-ULC) : Uppercase Basic Latin, Czech and Slovak,
+     %b2 ~ %bd (00-AST) : Astronomical Symbols,
+     %be       (00-SUS) : Sussy,
+     %bf       (00-API) : Apioform,
+     %c0 ~ %d6 (00-SBD) : Shading and Box Drawing,
+     %d7 ~ %ef (00-PLL) : Polish and Lithuanian,
+     %f8 ~ %ff (00-CCD) : Control Codes.
+
+     PAGE 01:
+     %00 ~ %0f (01-HXN) : Hexadecimal Numbers,
+     %10       (01-CCM) : Control Code Representation Marker,
+     %11 ~ %1f (01-MTH) : Mathematics,
+     %20 ~ %3f (01-PNC) : Punctuation,
+     %b0 ~ %bb (01-ZDC) : Zodiac Symbols,
+     %bc ~ %bf (01-CRS) : Card Suits,
+     %f8 ~ %ff (01-CCD) : Control Codes.
+  
+ The codepoints p00%f0 to p00%f9, as well as all pages other than 00, are
+ currently unused.
+ 
+ NOTES:
+ Cells with the value "AL" are allocated to a block, but yet not to a value.
+ The codepoints %0a ~ %0f should only be used in hexadecimal number contexts,
+ otherwise the QWERTZ block letters are preferred.
+ Similarly, %12 is only to be used for the constant e, the regular e letter
+ must be represented with %52.
+ %5e, %5f, %8e, %8f, %b0 and %b1 should occupy two characters' worth of space.
+ 
+ CHARACTERS REPRESENTED IN THIS TABLE WITH AN @ MARKER (non-monospace
+ / non-unicode):
+ @ap (%be) :
+     A bee. In many monospace fonts, the bee emoji does not fit into
+     the monospace grid. Therefore, I have represented it as ¤b
+     in the table, even though it is not related to the rest of the
+     ¤ representation codepoints.
+ @su (%bf) :
+     An Among Us impostor / crewmate. The closest Unicode approximation
+     is probably U+0d9e (Sinhala Letter Kantaja Naasikyaya).
+ @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6; %c8 ~ %ca) :
+     The characters in these ranges have no Unicode equivalent to my
+     knowledge; they should look like shaded variants of ▀ and ▄.
+ 
+ CHARACTERS REPRESENTED IN THIS TABLE WITH AN ¤ MARKER (control characters):
+ ¤n (%ff) : A newline.
+ ¤t (%fe) : A tab character.
+ ¤e (%fd) : Start of an "Escapoid" (see "ESCAPOIDS" for more information).
+ ¤d (%fc) : A "ding": emits a sound.
+ ¤p (%fb) : Switches the current codepage.
+ ¤c (%fa) : Clears the entire screen.
+ 
+ PAGE SWITCHING:
+ To switch the page, the ¤p (%fb) control code is used in conjunction with
+ two hexadecimal digits (HXN block): %bd %fb %00 %01 %bd prints a comet
+ symbol followed by a heart.
+ 
+ ESCAPOIDS:
+     COLOUR ESCAPOID:
+     The default colour is assumed to be white at the start of a file.
+     The COLOUR escapoid uses this representation of colours:
+         0 (%00) : white
+         1 (%01) : black
+         2 (%02) : red
+         3 (%03) : orange
+         4 (%04) : yellow
+         5 (%05) : green
+         6 (%06) : cyan
+         7 (%07) : blue
+         8 (%08) : purple
+         9 (%09) : pink
+         a (%0a) : magenta
+         b (%0b) : light green
+         c (%0c) : light purple
+         d (%0d) : gray
+         e (%0e) : light gray
+         f (%0f) : custom colour.
+         (todo recommended hex codes for these)
+     The "custom colour" character must then be followed by six more
+     hex digits (from the Hexadecimal Numbers block) representing a 24-bit
+     RGB colour, like in this example:
+         0f 0c 0c 09 09 0f 0f
+            R1 R2 G1 G2 B1 B2,
+     where ff represents full intensity of the light and 00 means it being
+     turned off completely (therefore fcc99ff is a lavender colour).
+     
+     The format of a COLOUR escapoid is ¤ec (%fd 72) followed by the
+     colour representation. Therefore, the following should print a white
+     "w", a pink "p" and a lime green "l":
+         %51 fd 72 09 59 fd 72 0f 04 03 0f 0f 00 00 68
+
+     BACKGROUND ESCAPOID:
+     The BACKGROUND escapoid works in a similar way to the COLOUR one, except
+     the colour representation is slightly different and the format is ¤eC
+     (with a capital C, %fd a2.) Its default value is black.
+     The colour representation codes are these:
+         0 (%00) : black
+         1 (%01) : white
+         2 (%02) : dark red
+         3 (%03) : orange
+         4 (%04) : brown
+         5 (%05) : dark green
+         6 (%06) : dark cyan
+         7 (%07) : dark blue
+         8 (%08) : dark purple
+         9 (%09) : dark pink
+         a (%0a) : red
+         b (%0b) : green
+         c (%0c) : purple
+         d (%0d) : dark gray
+         e (%0e) : gray
+         f (%0f) : custom colour.
+         (todo hex codes for these as well, possibly change palette)
+
+frenhc
+à │ è │ ù │ â │ ê │ î │ û │ ç │ ë │
+   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
+ e │ ï │ ü │ œ │ À │ È │ Ù │ Â │ Ê │ Î │ Û │ Ç │ Ë │ Ï │ Ü │ Œ
+ 
