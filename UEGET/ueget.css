@@ -9,5 +9,6 @@ pre {
 	font-smooth: never;
 	-webkit-font-smoothing : none;
 	font-family: Unifont;
-	font-size: 13px;
+	font-size: 26px;
+	line-height: 100%;
 }
