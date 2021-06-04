@@ -1,6 +1,6 @@
 <pre style="font-smooth: never; -webkit-font-smoothing : none; @font-face {font-family: 'Inter';src: url('UnifontMedium.woff2') format('woff2'),font-weight: normal;font-style: normal;font-display: swap;};font-family: Unifont;font-size: 13;">
  
- Ultlang Epic Gamer Encoding Thing : Desussybakafied Version 0.3
+ Ultlang Epic Gamer Encoding Thing : Version 0.3
 
  UEGET TABLES:
  The tables have been moved into a <a href="tables.html">separate file</a>:
@@ -20,7 +20,7 @@
      %bf       (00-API) : Apioform,
      %c0 ~ %d6 (00-SBD) : Shading and Box Drawing,
      %d7 ~ %ef (00-PLL) : Polish and Lithuanian,
-     %f8 ~ %ff (00-CCD) : Control Codes.
+     %fa ~ %ff (00-CCD) : Control Codes.
 
      PAGE 01:
      %00 ~ %0f (01-HXN) : Hexadecimal Numbers,
@@ -29,30 +29,31 @@
      %20 ~ %3f (01-PNC) : Punctuation,
      %b0 ~ %bb (01-ZDC) : Zodiac Symbols,
      %bc ~ %bf (01-CRS) : Card Suits,
-     %f8 ~ %ff (01-CCD) : Control Codes.
+     %fa ~ %ff (01-CCD) : Control Codes.
   
- The codepoints p00%f0 to p00%f9, as well as all pages other than 00, are
- currently unused.
+ The codepoints %f0 to %f9<00, %40 to %af<01 and %c0 to %f9<01,
+ as well as all pages other than 00 and 01, are currently unused.
  
  NOTES:
  Cells with the value "AL" are allocated to a block, but yet not to a value.
- The codepoints %0a ~ %0f should only be used in hexadecimal number contexts,
- otherwise the QWERTZ block letters are preferred.
+ The codepoints %0a ~ %0f<00 should only be used in hexadecimal number
+ contexts, otherwise Latin block letters are preferred.
  Similarly, %12 is only to be used for the constant e, the regular e letter
- must be represented with %52.
- %5e, %5f, %8e, %8f, %b0 and %b1 should occupy two characters' worth of space.
+ must be represented with %52<00 or an equivalent value.
+ %5e<00, %5f<00, %8e<00, %8f<00, %b0<00 and %b1<00 should occupy two
+ characters' worth of space.
  
  CHARACTERS REPRESENTED IN THIS TABLE WITH AN @ MARKER (non-monospace
  / non-unicode):
- @ap (%be) :
+ @ap (%be<00) :
      A bee. In many monospace fonts, the bee emoji does not fit into
      the monospace grid. Therefore, I have represented it as ¤b
      in the table, even though it is not related to the rest of the
      ¤ representation codepoints.
- @su (%bf) :
+ @su (%bf<00) :
      An Among Us impostor / crewmate. The closest Unicode approximation
      is probably U+0d9e (Sinhala Letter Kantaja Naasikyaya).
- @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6; %c8 ~ %ca) :
+ @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6<00; %c8 ~ %ca<00) :
      The characters in these ranges have no Unicode equivalent to my
      knowledge; they should look like shaded variants of ▀ and ▄.
  
@@ -65,6 +66,7 @@
  ¤c (%fa) : Clears the entire screen.
  
  PAGE SWITCHING:
+ The default page is assumed to be 00 until a page switch sequence occurs.
  To switch the page, the ¤p (%fb) control code is used in conjunction with
  two hexadecimal digits (HXN block): %bd %fb %00 %01 %bd prints a comet
  symbol followed by a heart.
