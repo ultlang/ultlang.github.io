@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Unifont';
+    src: url("../fonts/UnifontMedium.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+pre {
+	font-smooth: never;
+	-webkit-font-smoothing : none;
+	font-family: Unifont;
+	font-size: 13;
+}
