@@ -13,8 +13,8 @@
      %20 ~ %3f (00-PNC) : Punctuation,
      %40 ~ %49 (00-ARR) : Arrows,
      %4a ~ %4f (00-SHP) : Shapes,
-     %50 ~ %7f (00-LLC) : Lowercase Basic Latin, Czech and Slovak,
-     %80 ~ %b1 (00-ULC) : Uppercase Basic Latin, Czech and Slovak,
+     %50 ~ %7f (00-LCS) : Lowercase Basic Latin, Czech and Slovak,
+     %80 ~ %b1 (00-UCS) : Uppercase Basic Latin, Czech and Slovak,
      %b2 ~ %bd (00-AST) : Astronomical Symbols,
      %be       (00-SUS) : Sussy,
      %bf       (00-API) : Apioform,
@@ -26,6 +26,8 @@
      %00 ~ %0f (01-HXN) : Hexadecimal Numbers,
      %10       (01-CCM) : Control Code Representation Marker,
      %11 ~ %1f (01-MTH) : Mathematics,
+LWE
+      french, spanish, (portuguese? does it need more than ãõ??)
      %20 ~ %3f (01-PNC) : Punctuation,
      %b0 ~ %bb (01-ZDC) : Zodiac Symbols,
      %bc ~ %bf (01-CRS) : Card Suits,
@@ -40,8 +42,6 @@
  contexts, otherwise Latin block letters are preferred.
  Similarly, %12 is only to be used for the constant e, the regular e letter
  must be represented with %52<00 or an equivalent value.
- %5e<00, %5f<00, %8e<00, %8f<00, %b0<00 and %b1<00 should occupy two
- characters' worth of space.
  
  CHARACTERS REPRESENTED IN THE TABLES WITH AN @ MARKER (non-monospace
  / non-unicode):
