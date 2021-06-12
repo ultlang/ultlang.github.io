@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 canvas.width = 1000;
 canvas.height = 1000;
 var c = canvas.getContext('2d');
-fontsus = "Inter", "Inter V", "Segoe UI", sans-serif;
+fontsus = '"Inter", "Inter V", "Segoe UI", sans-serif';
 //#region audio
 	var susChiptune = document.createElement('audio');
 	susChiptune.src = "audio/sus.wav";
