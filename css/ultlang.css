@@ -28,7 +28,11 @@ p.small {
 	font-weight: 500;
 }
 h1 {
-	font: 42px "Inter Medium", 42px "Inter V Medium", 42px "Inter", 42px "Segoe UI", 42px sans-serif;
+	font: 42px sans-serif;
+	font: 42px "Segoe UI";
+	font: 42px "Inter"; 
+	font: 42px "Inter V Medium";
+	font: 42px "Inter Medium";
 	color: #6c1d45;
 }
 hr {
