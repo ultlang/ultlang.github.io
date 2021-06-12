@@ -1,16 +1,17 @@
-@font-face {
+/*@font-face {
     font-family: 'InterTHE';
     src: url('../fonts/Inter.woff2') format('woff2'),
          url('../fonts/Inter.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-}
+}*/
 
 
 
 html {
 	background-color: #f5d4ee;
+
 	font-family: "InterTHE", "Inter", "Inter V", "Inter Medium", "Inter V Medium", "Segoe UI", sans-serif;
 }
 main {
@@ -27,8 +28,7 @@ p.small {
 	font-weight: 500;
 }
 h1 {
-	font-size: 42px;
-	font-weight: 200;
+	font: 42px "Inter Medium", 42px "Inter V Medium", 42px "Inter", 42px "Segoe UI", 42px sans-serif;
 	color: #6c1d45;
 }
 hr {
