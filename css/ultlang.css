@@ -11,7 +11,7 @@
 
 html {
 	background-color: #f5d4ee;
-	font-family: Inter, Segoe UI, sans-serif;
+	font-family: Inter, "Inter V", "Inter Medium", "Inter V Medium", "Segoe UI", sans-serif;
 }
 main {
 	width: min(45em, 90%);
