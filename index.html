@@ -17,7 +17,7 @@
 		<p>you can contact me on discord as ultlang#1095 or on my twitter as @ultlang42. </p>
 		<hr>
 		<p><a href="https://ultlang.bandcamp.com">"bandcamp" link</a></p>
-		<p><a href="tex/Thunna.pdf">the wip documentation of my conlang, thunná</a></p>
+		<!-- <p><a href="tex/Thunna.pdf">the wip documentation of my conlang, thunná</a></p> (i have abandoned this project, as i do.)-->
 		<p><a href="game.html">"sus-sweeper", a minesweeper clone (warning: plays sound)</a></p>
 		<p class="small"> fresh randomly generated gibberish:</p>
 		<p id="gibberish">  ðð]]]ɣ. ;;;;;§ ඞj 51555½, わ .</p>
@@ -31,12 +31,12 @@
 <script>
 	gibberish = document.getElementById("gibberish");
 	gibberish.innerHTML = "";
-	symbols = ["ð",";","§","ඞ",",",".","1","2","3","4","5","6","7","8","9","0","か","わ","に","ｗ","é","ó",",",";",",",";",".","-","-","/"];
-
-	for (i = 0; i < Math.floor(Math.random() * 5) + 3; i++) {
-		for (j = 0; j < Math.floor(Math.random() * 4) + 2; j++) {
-			chosenSymbol = symbols[ Math.floor(Math.random() * symbols.length) ];
-			for (let k = 0; k < Math.max(1, Math.floor(Math.random() * 15) - 8); k++) {
+	symbols = ["ð",";","§","ඞ",",",".","1","2","3","4","5","6","7","8","9","0","か","わ","に","ｗ","é","ó",",",";",",",";",".","-","-","/","ŋ","æ","∂"];
+	function randint(int) {return Math.floor(Math.random() * int);}
+	for (i = 0; i < randint(5) + 3; i++) {
+		for (j = 0; j < randint(4) + 2; j++) {
+			chosenSymbol = symbols[randint(symbols.length)];
+			for (let k = 0; k < Math.max(1,randint(15)-8); k++) {
 				gibberish.innerHTML += chosenSymbol;
 			}
 		}
