@@ -1,18 +1,11 @@
-/*@font-face {
-    font-family: 'InterTHE';
-    src: url('../fonts/Inter.woff2') format('woff2'),
-         url('../fonts/Inter.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}*/
-
-
-
+:root {
+	--font: "Inter", "Inter V", "Segoe UI", sans-serif;
+	--headingfont: "Inter Medium", "Inter V Medium", "Inter", "Inter V", "Segoe UI Semibold", "Segoe UI", sans-serif;
+}
 html {
-	background-color: #f5d4ee;
-	font: 20px "Inter", "Inter V", "Segoe UI", sans-serif;
-
+	background-color: var(--bg);
+	font: 20px var(--font), sans-serif;
+	color: var(--text);
 }
 main {
 	width: min(45em, 90%);
@@ -20,12 +13,11 @@ main {
 	margin: auto;
 }
 p.small {
-	font: 12px "Inter", "Inter V", "Segoe UI", sans-serif;
+	font: 12px var(--font), sans-serif;
 }
 h1 {
-	font: 42px "Inter Medium", "Inter V Medium", "Segoe UI Semibold", sans-serif;
-	font: 200 42px "Inter", "Inter V"; 
-	color: #6c1d45;
+	font: 42px var(--headingfont), sans-serif;
+	color: var(--heading);
 }
 hr {
 	border-style:none;
