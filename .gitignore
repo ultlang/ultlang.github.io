@@ -4,3 +4,9 @@ tex/Thunna.synctex.gz
 replacements.txt
 bfg.jar
 .vscode/*
+fonts/Inter.woff
+fonts/Inter.woff2
+fonts/CharisSil-R.woff
+fonts/CharisSil-I.woff
+fonts/CharisSil-B.woff
+fonts/CharisSil-BI.woff
