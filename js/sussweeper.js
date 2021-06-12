@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 canvas.width = 1000;
 canvas.height = 1000;
 var c = canvas.getContext('2d');
-
+fontsus = "Inter", "Inter V", "Segoe UI", sans-serif;
 //#region audio
 	var susChiptune = document.createElement('audio');
 	susChiptune.src = "audio/sus.wav";
@@ -187,7 +187,7 @@ function shadedSquare(fill, upright, downleft, size, posx, posy, lwidth, text, t
 	c.lineTo(posx+size-(lwidth/2),posy+(lwidth));
 	c.strokeStyle = downleft;
 	c.stroke();
-	c.font = size/3*2 + "px var(--font)";
+	c.font = size/3*2 + "px " + fontsus;
 	c.fillStyle = textcol;
 	c.textAlign = "center";
 	c.textBaseline = "middle"
@@ -200,12 +200,12 @@ function loop() {
 	if (STARTED == false) {
 		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
 		c.fillStyle = "#000";
-		c.font = 100 + "px var(--font)";
+		c.font = 100 + "px " + fontsus;
 		c.textAlign = "center";
 		c.textBaseline = "middle"
 		c.fillText("click to play",500,400)
 		c.fillStyle = "#000";
-		c.font = 30 + "px var(--font)";
+		c.font = 30 + "px " + fontsus;
 		c.textAlign = "center";
 		c.textBaseline = "middle"
 		c.fillText("this has to be done to play sound from start. epic",500,550)
@@ -223,20 +223,20 @@ function loop() {
 	} else if ( !win ) {
 		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
 		c.fillStyle = "#000";
-		c.font = 100 + "px var(--font)";
+		c.font = 100 + "px " + fontsus;
 		c.textAlign = "center";
 		c.textBaseline = "middle"
 		c.fillText("click to play again",500,500)
 	} else if (  win ) {
 		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
 		c.fillStyle = "#000";
-		c.font = 100 + "px var(--font)";
+		c.font = 100 + "px " + fontsus;
 		c.textAlign = "center";
 		c.textBaseline = "middle"
 		c.fillText("you won!",500,300)
-		c.font = 70 + "px var(--font)";
+		c.font = 70 + "px " + fontsus;
 		c.fillText("good job!",500,500)
-		c.font = 70 + "px var(--font)";
+		c.font = 70 + "px " + fontsus;
 		c.fillText(Math.round(finalTime*10 / 1000) / 10 + " seconds",500,600)
 	}
 
