@@ -9,7 +9,6 @@ var c = canvas.getContext('2d');
 	susChiptune.autoplay = true;
 	susChiptune.volume = 0.2;
 	susChiptune.loop = true;
-	susChiptune.play(); 
 
 	var kill = document.createElement('audio');
 	kill.src = "audio/kill.mp3";
@@ -24,6 +23,12 @@ var c = canvas.getContext('2d');
 	click.src = "audio/button.mp3";
 	click.volume = 0.2;
 //#endregion
+function firstSetup() {
+	inProgress = false;
+	STARTED = false;
+	size = 16;
+	loop();
+} firstSetup();
 
 function setup() {
 	start.play();
@@ -62,7 +67,7 @@ function setup() {
 	document.getElementById("marknum").innerHTML = "marks left: " + markCount;
 
 	window.requestAnimationFrame(loop);
-} setup();
+}
 
 function cc() {
 	c.clearRect(0,0,canvas.height,canvas.width);
@@ -81,6 +86,15 @@ function removeDuplicates2D(arr) { // https://stackoverflow.com/questions/203394
 }
 
 function clickoid(x, y) {
+	if(STARTED == false) {
+		console.log("the")
+		susChiptune.play();
+		//console.log("")
+		setup();
+		//console.log("")
+		STARTED = true;
+		return;
+	}
 	xplus = Math.min( size-1, x + 1 );
 	xminus = Math.max( 0, x - 1 );
 	yplus = Math.min( size-1, y + 1 );
@@ -183,7 +197,19 @@ function shadedSquare(fill, upright, downleft, size, posx, posy, lwidth, text, t
 function loop() {
 	cc();
 	textcol = { "": "#aaa", 0: "#444", 1: "#000084", 2: "#238714", 3: "#bc0505", 4: "#7e057e", 5: "#7e057e", 6: "#7e057e", 7: "#7e057e", 8: "#7e057e", "ඞ": "#000", "🚩︎" : "#000" }
-	if (inProgress) {
+	if (STARTED == false) {
+		shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width,0,0, 6, "", "");
+		c.fillStyle = "#000";
+		c.font = 100 + "px Inter";
+		c.textAlign = "center";
+		c.textBaseline = "middle"
+		c.fillText("click to play",500,400)
+		c.fillStyle = "#000";
+		c.font = 30 + "px Inter";
+		c.textAlign = "center";
+		c.textBaseline = "middle"
+		c.fillText("this has to be done to play sound from start. epic",500,550)
+	} else if (inProgress) {
 		for (x = 0; x < size; x++) {
 			for (y = 0; y < size; y++) {
 				shadedSquare("#f5b0e7","#b16795","#6c1d45",canvas.width/size,x*canvas.width/size,y*canvas.height/size, 6, seenField[x][y], textcol[seenField[x][y]]);
