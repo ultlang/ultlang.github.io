@@ -12,27 +12,32 @@
 html {
 	background-color: #f5d4ee;
 
-	font-family: "InterTHE", "Inter", "Inter V", "Inter Medium", "Inter V Medium", "Segoe UI", sans-serif;
+	font: 20px sans-serif;
+	font: 20px "Segoe UI";
+	font: 20px "Inter"; 
+	font: 20px "Inter V";
+	font: 20px "Inter";
+
 }
 main {
 	width: min(45em, 90%);
 	text-align: center;
 	margin: auto;
 }
-p {
-	font-size: 20px;
-	font-weight: 500;
-}
 p.small {
-	font-size: 12px;
-	font-weight: 500;
+	font: 12px sans-serif;
+	font: 12px "Segoe UI";
+	font: 12px "Inter"; 
+	font: 12px "Inter V";
+	font: 12px "Inter";
 }
 h1 {
 	font: 42px sans-serif;
-	font: 42px "Segoe UI";
+	font: 42px "Segoe UI Semibold";
 	font: 42px "Inter"; 
 	font: 42px "Inter V Medium";
 	font: 42px "Inter Medium";
+	font: 42px "Sussy";
 	color: #6c1d45;
 }
 hr {
