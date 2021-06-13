@@ -4,7 +4,7 @@
 }
 html {
 	background-color: var(--bg);
-	font: 20px var(--font), sans-serif;
+	font: 20px var(--font);
 	color: var(--text);
 }
 main {
@@ -13,14 +13,18 @@ main {
 	margin: auto;
 }
 p.small {
-	font: 12px var(--font), sans-serif;
+	font: 12px var(--font);
 }
 h1 {
-	font: 42px var(--headingfont), sans-serif;
+	font: 42px var(--headingfont);
+	color: var(--heading);
+}
+h2 {
+	font: 24px var(--headingfont);
 	color: var(--heading);
 }
 a {
-	color: var(--heading)
+	color: var(--heading);
 }
 hr {
 	border-style:none;
