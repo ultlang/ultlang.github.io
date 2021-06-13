@@ -19,6 +19,9 @@ h1 {
 	font: 42px var(--headingfont), sans-serif;
 	color: var(--heading);
 }
+a {
+	color: var(--heading)
+}
 hr {
 	border-style:none;
 	border-top: 1px solid black;
