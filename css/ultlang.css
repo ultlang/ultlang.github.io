@@ -19,7 +19,7 @@ h1 {
 	font: 42px var(--headingfont);
 	color: var(--heading);
 }
-h2 {
+h2{
 	font: 24px var(--headingfont);
 	color: var(--heading);
 }
@@ -28,7 +28,7 @@ a {
 }
 hr {
 	border-style:none;
-	border-top: 1px solid black;
+	border-top: 1px solid var(--text);
 }
 table {
 	margin-left: auto;
@@ -36,13 +36,19 @@ table {
 	border-collapse: collapse;
 }
 td, th {
-	border: 1px solid #000;
+	border: 1px solid var(--text);
 	padding: 4px 6px;
 }
-
 ul.nobu {
 	list-style-type:none;
 }
 ul.nobu li {
 	margin-bottom: 5px;
+}
+summary {
+	font: 24px var(--headingfont);
+	color: var(--heading);
+}
+details {
+	margin: 10px;
 }
