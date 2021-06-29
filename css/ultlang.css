@@ -30,3 +30,19 @@ hr {
 	border-style:none;
 	border-top: 1px solid black;
 }
+table {
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+td, th {
+	border: 1px solid #000;
+	padding: 4px 6px;
+}
+
+ul.nobu {
+	list-style-type:none;
+}
+ul.nobu li {
+	margin-bottom: 5px;
+}
