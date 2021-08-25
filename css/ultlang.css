@@ -3,6 +3,13 @@
 	--headingfont: "Inter Medium", "Inter V Medium", "Inter", "Inter V", "Segoe UI Semibold", "Segoe UI", sans-serif;
 }
 
+@font-face {
+	font-family: ultlf;
+	src:
+		url('../fonts/ultlf.woff2') format('woff2')/*,
+		url('../fonts/ultlf.woff') format('woff')  */
+}
+
 html {
 	background-color: var(--bg);
 	font: 20px var(--font);
