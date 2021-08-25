@@ -52,3 +52,16 @@ summary {
 details {
 	margin: 10px;
 }
+
+.ultlf {
+	font-family: ultlf;
+	line-height: 1.5;
+	font-smooth: never;
+	-webkit-font-smoothing : none;
+}
+p.ultlf, ul.ultlf {
+	font-size: 10.8pt;
+}
+h1.ultlf {
+	font-size: 32.4pt;
+}
