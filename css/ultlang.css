@@ -2,6 +2,13 @@
 	--font: "Inter", "Inter V", "Segoe UI", sans-serif;
 	--headingfont: "Inter Medium", "Inter V Medium", "Inter", "Inter V", "Segoe UI Semibold", "Segoe UI", sans-serif;
 }
+
+@font-face {
+    font-family: ultlf;
+    src:
+        url('../fonts/ultlf.woff2') format('woff2'),
+}
+
 html {
 	background-color: var(--bg);
 	font: 20px var(--font);
