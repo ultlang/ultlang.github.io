@@ -4,7 +4,7 @@
 }
 
 @font-face {
-	font-family: ultlf;
+	font-family: ultlfw;
 	src:
 		url('../fonts/ultlf.woff2') format('woff2')/*,
 		url('../fonts/ultlf.woff') format('woff')  */
@@ -62,7 +62,7 @@ details {
 }
 
 .ultlf {
-	font-family: ultlf;
+	font-family: ultlfw;
 	line-height: 1.5;
 	font-smooth: never;
 	-webkit-font-smoothing : none;
