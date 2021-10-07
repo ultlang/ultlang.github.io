@@ -1,23 +1,25 @@
 @font-face {
     font-family: 'Unifont';
     src: url("../fonts/UnifontMedium.woff2") format("woff2");
-    unicode-range: U+0-FFFF;
+    unicode-range: U+0????;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
 
 @font-face {
-    font-family: 'UnifontU';
+    font-family: 'Unifont↑';
     src: url("../fonts/UnifontMedium↑.woff2") format("woff2");
     unicode-range: U+10000-2FFFF;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
 pre {
     font-smooth: never;
     -webkit-font-smoothing : none;
-    font-family: Unifont, "UnifontU";
+    font-family: "Unifont", "Unifont↑";
     font-size: 26px;
     line-height: 100%;
 }
