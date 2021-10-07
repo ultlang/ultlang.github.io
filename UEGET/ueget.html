@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='ueget.css'><pre>
  
- Ultlang Epic Gamer Encoding Thing : Version 0.4β
+ Ultlang Epic Gamer Encoding Thing : Version 0.5
 
  UEGET TABLES:
  The tables have been moved into a <a href="tables.html">separate file</a>.
@@ -22,18 +22,19 @@
      %d7 ~ %ef (00-PLL) : Polish and Lithuanian,
      %fa ~ %ff (00-CCD) : Control Codes.
 
-     PAGE 01 (???):
+     PAGE 01 (International Phonetic Alphabet):
      %00 ~ %0f (01-HXN) : Hexadecimal Numbers,
      %10       (01-CCM) : Control Code Representation Marker,
      %11 ~ %1f (01-MTH) : Mathematics,
-	LWE (lowercase western europe)
-      french, spanish, (portuguese? does it need more than ãõ??)
      %20 ~ %3f (01-PNC) : Punctuation,
-     %b0 ~ %bb (01-ZDC) : Zodiac Symbols,
-     %bc ~ %bf (01-CRS) : Card Suits,
+     %40 ~ %9f (01-CSN) : IPA Consonants,
+     %a0 ~ %bd (01-VWL) : IPA Vowels,
+     %be ~ %df (01-PDI) : IPA Diacritics,
+     %e0 ~ %ea (01-SUP) : IPA Superscripts,
+     %eb ~ %ef (01-TON) : Chao Tone Letters,
      %fa ~ %ff (01-CCD) : Control Codes.
   
- The codepoints %f0 to %f9<00, %40 to %af<01 and %c0 to %f9<01,
+ The codepoints %f0 to %f9:00, %40 to %af:01 and %c0 to %f9:01,
  as well as all pages other than 00 and 01, are currently unused.
  
  NOTES:
@@ -45,18 +46,19 @@
  
  CHARACTERS REPRESENTED IN THE TABLES WITH AN @ MARKER (non-monospace
  / non-unicode):
- @ap (%be<00) :
+ @ap (%be:00) :
      A bee. In many monospace fonts, the bee emoji does not fit into
      the monospace grid. Therefore, I have represented it as ¤b
      in the table, even though it is not related to the rest of the
      ¤ representation codepoints.
- @su (%bf<00) :
+ @su (%bf:00) :
      An Among Us impostor / crewmate. The closest Unicode approximation
      is probably U+0d9e (Sinhala Letter Kantaja Naasikyaya).
- @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6<00; %c8 ~ %ca<00) :
+ @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6:00; %c8 ~ %ca:00) :
      The characters in these ranges have no Unicode equivalent to my
      knowledge; they should look like shaded variants of ▀ and ▄.
- 
+ @↑͡ , @ ͡↑ (%7e ~ %7f:01) :
+     Two halves of a tiebar, split because of monospace limitations.
  CONTROL CODES:
  ¤n (%ff) : A newline.
  ¤t (%fe) : A tab character.
@@ -64,6 +66,7 @@
  ¤d (%fc) : A "ding": emits a sound.
  ¤p (%fb) : Switches the current codepage.
  ¤c (%fa) : Clears the entire screen.
+ ¤o (%f0) : Overstrike: goes back one space without deleting.
  
  PAGE SWITCHING:
  The default page is assumed to be 00 until a page switch sequence occurs.
