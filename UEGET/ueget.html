@@ -39,10 +39,10 @@
  
  NOTES:
  Cells with the value "AL" are allocated to a block, but yet not to a value.
- The codepoints %0a ~ %0f<00 should only be used in hexadecimal number
+ The codepoints %0a ~ %0f:00 should only be used in hexadecimal number
  contexts, otherwise Latin block letters are preferred.
  Similarly, %12 is only to be used for the constant e, the regular e letter
- must be represented with %52<00 or an equivalent value.
+ must be represented with %52:00 or an equivalent value.
  
  CHARACTERS REPRESENTED IN THE TABLES WITH AN @ MARKER (non-monospace
  / non-unicode):
@@ -57,8 +57,6 @@
  @░▀, ;▒▀, @▓▀, @░▄, @▒▄ and @▓▄ (%c4 ~ %c6:00; %c8 ~ %ca:00) :
      The characters in these ranges have no Unicode equivalent to my
      knowledge; they should look like shaded variants of ▀ and ▄.
- @↑͡ , @ ͡↑ (%7e ~ %7f:01) :
-     Two halves of a tiebar, split because of monospace limitations.
  CONTROL CODES:
  ¤n (%ff) : A newline.
  ¤t (%fe) : A tab character.
