@@ -18,12 +18,12 @@
 	</script>
 </head>
 <body>
-	<div class="row" style="display: flex;">
+	<div class="row">
 		<div>
 			<h1>version</h1>
 			<div class="sus">
-				<span><input type="radio" id="version-PRC" name="version" value="PRC"> <label for="version-PRC">processual</label></span>
-				<span><input type="radio" id="version-CPT" name="version" value="CPT"> <label for="version-CPT">completive</label></span>
+				<span><input type="radio" id="version-PRC" name="version" value="PRC"> <label for="version-PRC">processual (PRC)</label></span>
+				<span><input type="radio" id="version-CPT" name="version" value="CPT"> <label for="version-CPT">completive (CPT)</label></span>
 			</div>
 		</div><div>
 			<h1>stem</h1>
@@ -34,12 +34,39 @@
 				<span><input type="radio" id="stem-0" name="version" value="0"> <label for="stem-0">stem 0</label></span>
 			</div>
 		</div><div>
+			<h1>specification</h1>
+			<div class="sus">
+				<span><input type="radio" id="specification-BSC" name="specification" value="BSC"> <label for="specification-BSC">basic (BSC)</label></span>
+				<span><input type="radio" id="specification-CTE" name="specification" value="CTE"> <label for="specification-CTE">contential (CTE)</label></span>
+				<span><input type="radio" id="specification-CSV" name="specification" value="CSV"> <label for="specification-CSV">constitutive (CSV)</label></span>
+				<span><input type="radio" id="specification-OBJ" name="specification" value="OBJ"> <label for="specification-OBJ">objective (OBJ)</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div>
 			<h1>root</h1>
 			<div class="sus">
 				<span><input type="text" id="root"> <label for="root">root</label></span>
 			</div>
+		</div><div>
+			<h1>function</h1>
+			<div class="sus">
+				<span><input type="radio" id="function-STA" name="function" value="STA"> <label for="function-STA">stative (STA)</label></span>
+				<span><input type="radio" id="function-DYN" name="function" value="DYN"> <label for="function-DYN">dynamic (DYN)</label></span>
+			</div>
+		</div><div>
+			<h1>context</h1>
+			<div class="sus">
+				<span><input type="radio" id="context-EXS" name="context" value="EXS"> <label for="context-EXS">existential (EXS)</label></span>
+				<span><input type="radio" id="context-FNC" name="context" value="FNC"> <label for="context-FNC">functional (FNC)</label></span>
+				<span><input type="radio" id="context-RPS" name="context" value="RPS"> <label for="context-RPS">representative (RPS)</label></span>
+				<span><input type="radio" id="context-AMG" name="context" value="AMG"> <label for="context-AMG">amalgamate (AMG)</label></span>
+			</div>
 		</div>
 	</div>
+	
+
 
 	<br><hr><hr><br>
 		<h1 id="output">thing</h1>
