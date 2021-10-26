@@ -9,6 +9,13 @@ div.row, div.row div {
 	border-radius: 10px;
 	margin: 5px;
 }
+div.row div {
+	border: 2px solid #F1D1C8
+}
+div.row div div {
+	border: 2px solid #E2B3E4
+}
+
 div.row{
 	margin: 15px 5px
 }

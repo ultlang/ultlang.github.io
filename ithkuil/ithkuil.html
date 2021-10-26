@@ -43,10 +43,7 @@
 				<span><input type="radio" id="specification-CSV" name="specification" value="CSV"> <label for="specification-CSV">constitutive (CSV)</label></span>
 				<span><input type="radio" id="specification-OBJ" name="specification" value="OBJ"> <label for="specification-OBJ">objective (OBJ)</label></span>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div> <!--root-->
+		</div><div> <!--root-->
 			<h1>root</h1> 
 			<div class="sus" id=root>
 				<span><input type="text" id="rootval" value="l"> <label for="root">root</label></span>
@@ -124,7 +121,136 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div> <!--slot viii selector-->
+			<h1>slot vııı category</h1>
+			<div class="sus">
+				<span><input type="radio" id="viii-VAL" name="viii" value="VAL" checked="true"> <label for="viii-VAL">valence</label></span>
+				<span><input type="radio" id="viii-PHA" name="viii" value="PHA"> <label for="viii-PHA">phase</label></span>
+				<span><input type="radio" id="viii-EFF" name="viii" value="EFF"> <label for="viii-EFF">effect</label></span>
+				<span><input type="radio" id="viii-LEV" name="viii" value="LEV"> <label for="viii-LEV">level</label></span>
+				<span><input type="radio" id="viii-ASP" name="viii" value="ASP"> <label for="viii-ASP">aspect</label></span>
+			</div>
+		</div><div id="valence"> <!--valence-->
+			<h1>valence</h1>
+			<div class="sus">
+				<span><input type="radio" id="valence-MNO" name="valence" value="MNO" checked="true"> <label for="valence-MNO">monoactive (MNO)</label></span>
+				<span><input type="radio" id="valence-PRL" name="valence" value="PRL"> <label for="valence-PRL">parallel (PRL)</label></span>
+				<span><input type="radio" id="valence-CRO" name="valence" value="CRO"> <label for="valence-CRO">corrolary (CRO)</label></span>
+				<span><input type="radio" id="valence-RCP" name="valence" value="RCP"> <label for="valence-RCP">reciprocal (RCP)</label></span>
+				<span><input type="radio" id="valence-CPL" name="valence" value="CPL"> <label for="valence-CPL">complementary (CPL)</label></span>
+				<span><input type="radio" id="valence-DUP" name="valence" value="DUP"> <label for="valence-DUP">duplicative (DUP)</label></span>
+				<span><input type="radio" id="valence-DEM" name="valence" value="DEM"> <label for="valence-DEM">demonstrative (DEM)</label></span>
+				<span><input type="radio" id="valence-CNG" name="valence" value="CNG"> <label for="valence-CNG">contingent (CNG)</label></span>
+				<span><input type="radio" id="valence-PTI" name="valence" value="PTI"> <label for="valence-PTI">participative (PTI)</label></span>
+			</div>
+		</div><div id="phase"> <!--phase-->
+			<h1>phase</h1>
+			<div class="sus">
+				<span><input type="radio" id="phase-PCT" name="phase" value="PCT" checked="true"> <label for="phase-PCT">punctual (PCT)</label></span>
+				<span><input type="radio" id="phase-ITR" name="phase" value="ITR"> <label for="phase-ITR">iterative (ITR)</label></span>
+				<span><input type="radio" id="phase-REP" name="phase" value="REP"> <label for="phase-REP">repetitive (REP)</label></span>
+				<span><input type="radio" id="phase-ITM" name="phase" value="ITM"> <label for="phase-ITM">intermittent (ITM)</label></span>
+				<span><input type="radio" id="phase-RCT" name="phase" value="RCT"> <label for="phase-RCT">recurrent (RCT)</label></span>
+				<span><input type="radio" id="phase-FRE" name="phase" value="FRE"> <label for="phase-FRE">frequentative (FRE)</label></span>
+				<span><input type="radio" id="phase-FRG" name="phase" value="FRG"> <label for="phase-FRG">fragmentative (FRG)</label></span>
+				<span><input type="radio" id="phase-VAC" name="phase" value="VAC"> <label for="phase-VAC">vacillative (VAC)</label></span>
+				<span><input type="radio" id="phase-FLC" name="phase" value="FLC"> <label for="phase-FLC">fluctuative (FLC)</label></span>
+			</div>
+		</div><div id="effect"> <!--effect-->
+			<h1>effect</h1>
+			<div class="sus">
+				<span><input type="radio" id="effect-1:BEN" name="effect" value="1:BEN" checked="true"> <label for="effect-1:BEN">1:BEN</label></span>
+				<span><input type="radio" id="effect-2:BEN" name="effect" value="2:BEN"> <label for="effect-2:BEN">2:BEN</label></span>
+				<span><input type="radio" id="effect-3:BEN" name="effect" value="3:BEN"> <label for="effect-3:BEN">3:BEN</label></span>
+				<span><input type="radio" id="effect-SLF:BEN" name="effect" value="SLF:BEN"> <label for="effect-SLF:BEN">SLF:BEN</label></span>
+				<span><input type="radio" id="effect-UNK" name="effect" value="UNK"> <label for="effect-UNK">unknown (UNK)</label></span>
+				<span><input type="radio" id="effect-SLF:DET" name="effect" value="SLF:DET"> <label for="effect-SLF:DET">SLF:DET</label></span>
+				<span><input type="radio" id="effect-3:DET" name="effect" value="3:DET"> <label for="effect-3:DET">3:DET</label></span>
+				<span><input type="radio" id="effect-2:DET" name="effect" value="2:DET"> <label for="effect-2:DET">2:DET</label></span>
+				<span><input type="radio" id="effect-1:DET" name="effect" value="1:DET"> <label for="effect-1:DET">1:DET</label></span>
+			</div>
+		</div><div id="level"> <!--level-->
+			<h1>level</h1>
+			<div class="sus">
+				<span><input type="radio" id="level-MIN" name="level" value="MIN" checked="true"> <label for="level-MIN">minimal (MIN)</label></span>
+				<span><input type="radio" id="level-SBE" name="level" value="SBE"> <label for="level-SBE">subequative (SBE)</label></span>
+				<span><input type="radio" id="level-IFR" name="level" value="IFR"> <label for="level-IFR">inferior (IFR)</label></span>
+				<span><input type="radio" id="level-DFT" name="level" value="DFT"> <label for="level-DFT">deficient (DFT)</label></span>
+				<span><input type="radio" id="level-EQU" name="level" value="EQU"> <label for="level-EQU">equative (EQU)</label></span>
+				<span><input type="radio" id="level-SUR" name="level" value="SUR"> <label for="level-SUR">surpassive (SUR)</label></span>
+				<span><input type="radio" id="level-SPL" name="level" value="SPL"> <label for="level-SPL">superlative (SPL)</label></span>
+				<span><input type="radio" id="level-SPQ" name="level" value="SPQ"> <label for="level-SPQ">superequative (SPQ)</label></span>
+				<span><input type="radio" id="level-MAX" name="level" value="MAX"> <label for="level-MAX">maximal (MAX)</label></span>
+			</div>
+		</div><div id="aspdiv"> <!--aspect-->
+			<h1>aspect</h1>
+			<div class="sus" id=aspect>
+				<span><select id="aspval" name="aspect"></select><label for="aspval">aspect</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="scopediv"> <!--casescope-->
+			<h1>case scope</h1>
+			<div class="sus">
+				<span><input type="radio" id="casescope-CCN" name="casescope" value="CCN" checked="true"> <label for="casescope-CCN">natural (CCN)</label></span>
+				<span><input type="radio" id="casescope-CCA" name="casescope" value="CCA"> <label for="casescope-CCA">antecedent (CCA)</label></span>
+				<span><input type="radio" id="casescope-CCS" name="casescope" value="CCS"> <label for="casescope-CCS">subaltern (CCS)</label></span>
+				<span><input type="radio" id="casescope-CCQ" name="casescope" value="CCQ"> <label for="casescope-CCQ">qualifier (CCQ)</label></span>
+				<span><input type="radio" id="casescope-CCP" name="casescope" value="CCP"> <label for="casescope-CCP">precedent (CCP)</label></span>
+				<span><input type="radio" id="casescope-CCV" name="casescope" value="CCV"> <label for="casescope-CCV">successive (CCV)</label></span>
+			</div>
+		</div><div id="mooddiv"> <!--mood-->
+			<h1>mood</h1>
+			<div class="sus">
+				<span><input type="radio" id="mood-FAC" name="mood" value="FAC" checked="true"> <label for="mood-FAC">factual (FAC)</label></span>
+				<span><input type="radio" id="mood-SUB" name="mood" value="SUB"> <label for="mood-SUB">subjunctive (SUB)</label></span>
+				<span><input type="radio" id="mood-ASM" name="mood" value="ASM"> <label for="mood-ASM">assumptive (ASM)</label></span>
+				<span><input type="radio" id="mood-SPC" name="mood" value="SPC"> <label for="mood-SPC">speculative (SPC)</label></span>
+				<span><input type="radio" id="mood-COU" name="mood" value="COU"> <label for="mood-COU">counterfactive (COU)</label></span>
+				<span><input type="radio" id="mood-HYP" name="mood" value="HYP"> <label for="mood-HYP">hypothetical (HYP)</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div> <!--stress-->
+			<h1>stress</h1>
+			<div class="sus" id=stress>
+				<span><input type="radio" id="stress-1" name="stress" value="1"> <label for="stress-1">unframed verb (ultimate)</label></span>
+				<span><input type="radio" id="stress-2" name="stress" value="2" checked="true"> <label for="stress-2">noun (penultimate)</label></span>
+				<span><input type="radio" id="stress-3" name="stress" value="3"> <label for="stress-3">framed verb (antepenultimate)</label></span>
+			</div>
+		</div><div id="casediv"> <!--case-->
+			<h1>case</h1>
+			<div class="sus" id=case>
+				<span><select id="caseval" name="case"></select><label for="caseval">case</label></span>
+			</div>
+		</div><div id="expdiv"> <!--expectation-->
+			<h1>expectation</h1>
+			<div class="sus">
+				<span><input type="radio" id="expectation-COG" name="expectation" value="COG" checked="true"> <label for="expectation-COG">cognitive (COG)</label></span>
+				<span><input type="radio" id="expectation-RSP" name="expectation" value="RSP"> <label for="expectation-RSP">responsive (RSP)</label></span>
+				<span><input type="radio" id="expectation-EXE" name="expectation" value="EXE"> <label for="expectation-EXE">executive (EXE)</label></span>
+			</div>
+		</div><div id="valdiv"> <!--validation-->
+			<h1>validation</h1>
+			<div class="sus">
+				<span><input type="radio" id="validation-OBS" name="validation" value="OBS"  checked="true"> <label for="validation-OBS">observational (OBS)</label></span>
+				<span><input type="radio" id="validation-REC" name="validation" value="REC"> <label for="validation-REC">recollective(REC)</label></span>
+				<span><input type="radio" id="validation-PUP" name="validation" value="PUP"> <label for="validation-PUP">purportive (PUP)</label></span>
+				<span><input type="radio" id="validation-RPR" name="validation" value="RPR"> <label for="validation-RPR">reportive (RPR)</label></span>
+				<span><input type="radio" id="validation-PFM" name="validation" value="PFM"> <label for="validation-PFM">performative (PFM)</label></span>
+				<span><input type="radio" id="validation-IMA" name="validation" value="IMA"> <label for="validation-IMA">imaginary (IMA)</label></span>
+				<span><input type="radio" id="validation-CVN" name="validation" value="CVN"> <label for="validation-CVN">conventional (CVN)</label></span>
+				<span><input type="radio" id="validation-ITU" name="validation" value="ITU"> <label for="validation-ITU">intuitive (ITU)</label></span>
+				<span><input type="radio" id="validation-INF" name="validation" value="INF"> <label for="validation-INF">inferential (INF)</label></span>
+			</div>
+		</div>
+	</div>
 	
+
+
 
 
 	<!--<br><hr><hr><br>

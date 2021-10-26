@@ -38,11 +38,14 @@
 	perspectives = ["M","G","N","A"];
 	essences = ["NRM","RPV"];
 	gCases = ["THM","INS","ABS","AFF","STM","EFF","ERG","DAT","IND","POS","PRP","GEN","ATT","PDC","ITP","OGN","IDP","PAR","APL","PUR","TRA","DFR","CRS","TSP","CMM","CMP","CSD","FUN","TFM","CLA","RSL","CSM","CON","AVS","CVS","SIT","PRN","DSP","COR","CPS","COM","UTL","PRD","RLT","ACT","ASI","ESS","TRM","SEL","CFM","DEP","VOC","LOC","ATD","ALL","ABL","ORI","IRL","INV","NAV","CNR","ASS","PER","PRO","PCV","PCR","ELP","PLM"];
+	caseNames = ["thematic","instrumental","absolutive","affective","stimulative","effectuative","ergative","dative","inducive","possessive","proprietive","genitive","attributive","productive","interpretative","originative","interdependent","partitive","applicative","purposive","transmissive","deferential","contrastive","transpositive","commutative","comparative","considerative","functive","transformative","classificative","resultative","consumptive","concessive","aversive","conversive","situative","pertinential","descriptive","correlative","compositive","comitative","utilitative","predicative","relative","activative","assimilative","essive","terminative","selective","conformative","dependent","vocative","locative","attendant","allative","ablative","orientative","interrelative","intrative","navigative","concursive","assessive","periodic","prolapsive","precursive","postcursive","elapsive","prolimitive"]
 	VPLEAs = ["MNO","PRL","CRO","RCP","CPL","DUP","DEM","CNG","PTI","PCT","ITR","REP","ITM","RCT","FRE","FRG","VAC","FLC","1:BEN","2:BEN","3:BEN","SLF:BEN","UNK","SLF:DET","3:DET","2:DET","1:DET","MIN","SBE","IFR","DFT","EQU","SUR","SPL","SPQ","MAX","RTR","PRS","HAB","PRG","IMM","PCS","REG","SMM","ATP","RSM","CSS","PAU","RGR","PCL","CNT","ICS","EXP","IRP","PMP","CLM","DLT","TMP","XPD","LIM","EPD","PTC","PPR","DCL","CCL","CUL","IMD","TRD","TNS","ITC","MTV","SQN"];
+	aspectNames = ["retrospective","prospective","habitual","progressive","imminent","precessive","regulative","summative","anticipatory","resumptive","cessative","pausal","regressive","preclusive","continuative","incessative","experiential","interruptive","preemptive","climactic","dilatory","temporary","expenditive","limitative","expeditive","protractive","preparatory","disclusive","conclusive","culminative","intermediative","tardative","transitional","intercommutative","motive","sequential"]
 	moodOrCaseScopes = ["FAC","SUB","ASM","SPC","COU","HYP","CCN","CCA","CCS","CCQ","CCP","CCVS"];
 	validations = ["OBS","REC","PUP","RPR","PFM","IMA","CVN","ITU","INF"];
 	expectations = ["COG","RSP","EXE"]
 //#endregion
+
 
 //#region value definition
 	affilationValues = ["","l","r","ř",  "","nļ","rļ","řļ"]; //normal, then standalone
@@ -404,13 +407,106 @@ function getOpts(e) {
 		}
 	}
 
+	stressrs = document.querySelectorAll('input[name="stress"]')
+	for (radio of stressrs) {
+		if (radio.checked) {
+			opts.stress = radio.value;
+			if (radio.value == 2 || radio.value == 3) {
+				document.getElementById("casediv").style.display = "block"
+				document.getElementById("scopediv").style.display = "block"
+				document.getElementById("expdiv").style.display = "none"
+				document.getElementById("valdiv").style.display = "none"
+				document.getElementById("mooddiv").style.display = "none"
+
+				opts.case = document.getElementById("caseval").value
+				scopers = document.querySelectorAll('input[name="casescope"]')
+				for (ra of scopers){if(ra.checked){opts.moodOrCaseScope=ra.value}}
+			}
+			else {
+				document.getElementById("casediv").style.display = "none"
+				document.getElementById("scopediv").style.display = "none"
+				document.getElementById("expdiv").style.display = "block"
+				document.getElementById("valdiv").style.display = "block"
+				document.getElementById("mooddiv").style.display = "block"
+
+				expectationrs = document.querySelectorAll('input[name="expectation"]')
+				for (ra of expectationrs){if(ra.checked){opts.expectation=ra.value}}
+				validationrs = document.querySelectorAll('input[name="validation"]')
+				for (ra of validationrs){if(ra.checked){opts.validation=ra.value}}
+				moodrs = document.querySelectorAll('input[name="mood"]')
+				for (ra of moodrs){if(ra.checked){opts.moodOrCaseScope=ra.value}}
+			}
+			break;
+		}
+	}
+
+	viiirs = document.querySelectorAll('input[name="viii"]')
+	for (radio of viiirs) {
+		if (radio.checked) {
+			if (radio.value == "VAL") {
+				document.getElementById("valence").style.display = "block"
+				document.getElementById("phase").style.display = "none"
+				document.getElementById("effect").style.display = "none"
+				document.getElementById("level").style.display = "none"
+				document.getElementById("aspdiv").style.display = "none"
+
+				valencers = document.querySelectorAll('input[name="valence"]')
+				for (ra of valencers){if(ra.checked){opts.VPLEA=ra.value}}
+			} else if (radio.value == "PHA") {
+				document.getElementById("valence").style.display = "none"
+				document.getElementById("phase").style.display = "block"
+				document.getElementById("effect").style.display = "none"
+				document.getElementById("level").style.display = "none"
+				document.getElementById("aspdiv").style.display = "none"
+
+				phasers = document.querySelectorAll('input[name="phase"]')
+				for (ra of phasers){if(ra.checked){opts.VPLEA=ra.value}}
+			} else if (radio.value == "EFF") {
+				document.getElementById("valence").style.display = "none"
+				document.getElementById("phase").style.display = "none"
+				document.getElementById("effect").style.display = "block"
+				document.getElementById("level").style.display = "none"
+				document.getElementById("aspdiv").style.display = "none"
+
+				effectrs = document.querySelectorAll('input[name="effect"]')
+				for (ra of effectrs){if(ra.checked){opts.VPLEA=ra.value}}
+			} else if (radio.value == "LEV") {
+				document.getElementById("valence").style.display = "none"
+				document.getElementById("phase").style.display = "none"
+				document.getElementById("effect").style.display = "none"
+				document.getElementById("level").style.display = "block"
+				document.getElementById("aspdiv").style.display = "none"
+
+				levelrs = document.querySelectorAll('input[name="level"]')
+				for (ra of levelrs){if(ra.checked){opts.VPLEA=ra.value}}
+			} else {
+				document.getElementById("valence").style.display = "none"
+				document.getElementById("phase").style.display = "none"
+				document.getElementById("effect").style.display = "none"
+				document.getElementById("level").style.display = "none"
+				document.getElementById("aspdiv").style.display = "block"
+
+				opts.VPLEA = document.getElementById("aspval").value
+			}
+		}
+	}
+
+
+
+
 	document.getElementById("formative").innerHTML = genWord(opts);
 
 }
 
 function load() {
+	for (option of gCases) {
+		document.querySelector('select#caseval').innerHTML += "<option value=\"" + option + "\">" + caseNames[gCases.indexOf(option)] + " (" + option + ")</option>"
+	}
+	for (option of VPLEAs.slice(VPLEAs.indexOf("RTR"), VPLEAs.length) ) {
+		document.querySelector('select#aspval').innerHTML += "<option value=\"" + option + "\">" + aspectNames[VPLEAs.slice(VPLEAs.indexOf("RTR"), VPLEAs.length).indexOf(option)] + " (" + option + ")</option>"
+	}
 	getOpts()
-	const inputs = document.querySelectorAll('input');
+	const inputs = document.querySelectorAll('input, select');
 	for (input of inputs) {
 		input.addEventListener('input', getOpts);
 	}
