@@ -6,7 +6,8 @@
 
 	<link rel="stylesheet" href="ith.css">
 
-	<title>Ithgen™</title>
+	<title>ithkuil word maker by ultlang
+	</title>
 	<script src="ithgen.js"></script>
 	<script>
 		function out() {
@@ -18,14 +19,15 @@
 	</script>
 </head>
 <body onload="load()">
+	<h1 id="formative"></h1>
 	<div class="row">
-		<div>
+		<div> <!--version-->
 			<h1>version</h1>
 			<div class="sus" id=version>
 				<span><input type="radio" id="version-PRC" name="version" value="PRC" checked="true"> <label for="version-PRC">processual (PRC)</label></span>
 				<span><input type="radio" id="version-CPT" name="version" value="CPT"> <label for="version-CPT">completive (CPT)</label></span>
 			</div>
-		</div><div>
+		</div><div> <!--stem-->
 			<h1>stem</h1>
 			<div class="sus" id=stem>
 				<span><input type="radio" id="stem-1" name="stem" value="1" checked="true"> <label for="stem-1">stem 1</label></span>
@@ -33,7 +35,7 @@
 				<span><input type="radio" id="stem-3" name="stem" value="3"> <label for="stem-3">stem 3</label></span>
 				<span><input type="radio" id="stem-0" name="stem" value="0"> <label for="stem-0">stem 0</label></span>
 			</div>
-		</div><div>
+		</div><div> <!--specification-->
 			<h1>specification</h1>
 			<div class="sus" id=specification>
 				<span><input type="radio" id="specification-BSC" name="specification" value="BSC" checked="true"> <label for="specification-BSC">basic (BSC)</label></span>
@@ -44,18 +46,18 @@
 		</div>
 	</div>
 	<div class="row">
-		<div>
-			<h1>root</h1>
+		<div> <!--root-->
+			<h1>root</h1> 
 			<div class="sus" id=root>
 				<span><input type="text" id="rootval" value="l"> <label for="root">root</label></span>
 			</div>
-		</div><div>
-			<h1>function</h1>
+		</div><div> <!--function-->
+			<h1>function</h1> 
 			<div class="sus" id=function>
 				<span><input type="radio" id="function-STA" name="function" value="STA" checked="true"> <label for="function-STA">stative (STA)</label></span>
 				<span><input type="radio" id="function-DYN" name="function" value="DYN"> <label for="function-DYN">dynamic (DYN)</label></span>
 			</div>
-		</div><div>
+		</div><div> <!--context-->
 			<h1>context</h1>
 			<div class="sus" id=context>
 				<span><input type="radio" id="context-EXS" name="context" value="EXS" checked="true"> <label for="context-EXS">existential (EXS)</label></span>
@@ -66,34 +68,66 @@
 		</div>
 	</div>
 	<div class="row">
-		<h2 style="flex:0 0 100%; text-align: center;">configuration</h1><br>
-		<div>
+		<!--<h2 style="flex:0 0 100%; text-align: center;">configuration</h1><br>-->
+		<div> <!--plexity-->
 			<h1>plexity</h1>
 			<div class="sus" id=plexity>
 				<span><input type="radio" id="plexity-U" name="plexity" value="U" checked="true"> <label for="plexity-U">uniplex (UPX)</label></span>
 				<span><input type="radio" id="plexity-D" name="plexity" value="D"> <label for="plexity-D">duplex (D-)</label></span>
 				<span><input type="radio" id="plexity-M" name="plexity" value="M"> <label for="plexity-M">multiplex (M-)</label></span>
 			</div>
-		</div><div>
+		</div><div> <!--similarity-->
 			<h1>similarity</h1>
 			<div class="sus" id=similarity>
 				<span><input type="radio" id="similarity-S" name="similarity" value="S" checked="true"> <label for="similarity-S">similar (-S-)</label></span>
 				<span><input type="radio" id="similarity-D" name="similarity" value="D"> <label for="similarity-D">dissimilar (-D-)</label></span>
 				<span><input type="radio" id="similarity-F" name="similarity" value="F"> <label for="similarity-F">fuzzy (-F-)</label></span>
 			</div>
-		</div><div>
+		</div><div> <!--separability-->
 			<h1>separability</h1>
 			<div class="sus" id=separability>
 				<span><input type="radio" id="separability-S" name="separability" value="S" checked="true"> <label for="separability-S">separate (-S)</label></span>
 				<span><input type="radio" id="separability-C" name="separability" value="C"> <label for="separability-C">connected (-C)</label></span>
 				<span><input type="radio" id="separability-F" name="separability" value="F"> <label for="separability-F">fused (-F)</label></span>
 			</div>
+		</div><div> <!--affiliation-->
+			<h1>affiliation</h1>
+			<div class="sus" id=affiliation>
+				<span><input type="radio" id="affiliation-CSL" name="affiliation" value="CSL" checked="true"> <label for="affiliation-CSL">consolidative (CSL)</label></span>
+				<span><input type="radio" id="affiliation-ASO" name="affiliation" value="ASO"> <label for="affiliation-ASO">associative (ASO)</label></span>
+				<span><input type="radio" id="affiliation-COA" name="affiliation" value="COA"> <label for="affiliation-COA">coalescent (COA)</label></span>
+				<span><input type="radio" id="affiliation-VAR" name="affiliation" value="VAR"> <label for="affiliation-VAR">variative (VAR)</label></span>
+			</div>
+		</div><div> <!--perspective-->
+			<h1>perspective</h1>
+			<div class="sus" id=perspective>
+				<span><input type="radio" id="perspective-M" name="perspective" value="M" checked="true"> <label for="perspective-M">monadic (M)</label></span>
+				<span><input type="radio" id="perspective-G" name="perspective" value="G"> <label for="perspective-G">agglomerative (G)</label></span>
+				<span><input type="radio" id="perspective-N" name="perspective" value="N"> <label for="perspective-N">nomic (N)</label></span>
+				<span><input type="radio" id="perspective-A" name="perspective" value="A"> <label for="perspective-A">abstract (A)</label></span>
+			</div>
+		</div><div> <!--extension-->
+			<h1>extension</h1>
+			<div class="sus" id=extension>
+				<span><input type="radio" id="extension-DEL" name="extension" value="DEL" checked="true"> <label for="extension-DEL">delimitive (DEL)</label></span>
+				<span><input type="radio" id="extension-PRX" name="extension" value="PRX"> <label for="extension-PRX">proximal (PRX)</label></span>
+				<span><input type="radio" id="extension-ICP" name="extension" value="ICP"> <label for="extension-ICP">inceptive (ICP)</label></span>
+				<span><input type="radio" id="extension-ATV" name="extension" value="ATV"> <label for="extension-ATV">attenuative (ATV)</label></span>
+				<span><input type="radio" id="extension-GRA" name="extension" value="GRA"> <label for="extension-GRA">graduative (GRA)</label></span>
+				<span><input type="radio" id="extension-DPL" name="extension" value="DPL"> <label for="extension-DPL">depletive (DPL)</label></span>
+			</div>
+		</div><div> <!--essence-->
+			<h1>essence</h1>
+			<div class="sus" id=essence>
+				<span><input type="radio" id="essence-NRM" name="essence" value="NRM" checked="true"> <label for="essence-NRM">???? (NRM)</label></span>
+				<span><input type="radio" id="essence-RPV" name="essence" value="RPV"> <label for="essence-RPV">representative (RPV)</label></span>
+			</div>
 		</div>
 	</div>
 	
 
 
-	<br><hr><hr><br>
+	<!--<br><hr><hr><br>
 		<h1 id="output">thing</h1>
 		<textarea id="input" rows="15" cols="30">
 {
@@ -113,6 +147,6 @@
 }
 </textarea>
 
-		<button onclick="out()">generate !</button>
+		<button onclick="out()">generate !</button>-->
 </body>
 </html>

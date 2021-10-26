@@ -359,10 +359,36 @@ function getOpts(e) {
 	opts = {};
 	opts.root = document.getElementById("rootval").value;
 
+	versionrs = document.querySelectorAll('input[name="version"]')
+	for (radio of versionrs) { if (radio.checked) { opts.version = radio.value;break; } }
+
+	stemrs = document.querySelectorAll('input[name="stem"]')
+	for (radio of stemrs) { if (radio.checked) { opts.stem = parseInt(radio.value);break; } }
+
+	specificationrs = document.querySelectorAll('input[name="specification"]')
+	for (radio of specificationrs) { if (radio.checked) { opts.specification = radio.value;break; } }
+
+	functionrs = document.querySelectorAll('input[name="function"]')
+	for (radio of functionrs) { if (radio.checked) { opts.function = radio.value;break; } }
+
+	contextrs = document.querySelectorAll('input[name="context"]')
+	for (radio of contextrs) { if (radio.checked) { opts.context = radio.value;break; } }
+
+	affiliationrs = document.querySelectorAll('input[name="affiliation"]')
+	for (radio of affiliationrs) { if (radio.checked) { opts.affiliation = radio.value;break; } }
+
+	perspectivers = document.querySelectorAll('input[name="perspective"]')
+	for (radio of perspectivers) { if (radio.checked) { opts.perspective = radio.value;break; } }
+
+	extensionrs = document.querySelectorAll('input[name="extension"]')
+	for (radio of extensionrs) { if (radio.checked) { opts.extension = radio.value;break; } }
+
+	essencers = document.querySelectorAll('input[name="essence"]')
+	for (radio of essencers) { if (radio.checked) { opts.essence = radio.value;break; } }
+
 	plexities = document.querySelectorAll('input[name="plexity"]')
 	similarities = document.querySelectorAll('input[name="similarity"]')
 	separabilities = document.querySelectorAll('input[name="separability"]')
-
 	for (radio of plexities) {
 		if (radio.checked) {
 			if (radio.value == "U") {
@@ -378,8 +404,8 @@ function getOpts(e) {
 		}
 	}
 
-	console.log(opts)
-	console.log(genWord(opts))
+	document.getElementById("formative").innerHTML = genWord(opts);
+
 }
 
 function load() {
