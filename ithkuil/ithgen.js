@@ -354,3 +354,38 @@ function genWord(opts = {}) {
 	}
 	return applyStress(slot2 + slot3 + slot4 + slot5 + slot6 + slot7 + slot8 + slot9);
 }
+
+function getOpts(e) {
+	opts = {};
+	opts.root = document.getElementById("rootval").value;
+
+	plexities = document.querySelectorAll('input[name="plexity"]')
+	similarities = document.querySelectorAll('input[name="similarity"]')
+	separabilities = document.querySelectorAll('input[name="separability"]')
+
+	for (radio of plexities) {
+		if (radio.checked) {
+			if (radio.value == "U") {
+				for (ra of similarities){ra.disabled = true;}
+				for (ra of separabilities){ra.disabled = true;}
+				opts.configuration = "UPX"
+			} else {
+				opts.configuration = radio.value
+				for (ra of similarities){ra.disabled = false;if(ra.checked){opts.configuration+=ra.value}}
+				for (ra of separabilities){ra.disabled = false;if(ra.checked){opts.configuration+=ra.value}}
+			}
+			break;
+		}
+	}
+
+	console.log(opts)
+	console.log(genWord(opts))
+}
+
+function load() {
+	getOpts()
+	const inputs = document.querySelectorAll('input');
+	for (input of inputs) {
+		input.addEventListener('input', getOpts);
+	}
+}

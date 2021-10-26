@@ -17,26 +17,26 @@
 		//console.log(genWord( { root: "md", stem: 2, version: "CPT", function: "DYN", specification: "OBJ", context: "AMG", stress: "1", validation: "CVN", expectation: "RSP", affixesV: [["nt", 1, 1]], affixesVII: [["mk", 8, 2]], ca: ["ASO","MSS","PRX","G","RPV"], VPLEA: "2:BEN" } ));
 	</script>
 </head>
-<body>
+<body onload="load()">
 	<div class="row">
 		<div>
 			<h1>version</h1>
-			<div class="sus">
-				<span><input type="radio" id="version-PRC" name="version" value="PRC"> <label for="version-PRC">processual (PRC)</label></span>
+			<div class="sus" id=version>
+				<span><input type="radio" id="version-PRC" name="version" value="PRC" checked="true"> <label for="version-PRC">processual (PRC)</label></span>
 				<span><input type="radio" id="version-CPT" name="version" value="CPT"> <label for="version-CPT">completive (CPT)</label></span>
 			</div>
 		</div><div>
 			<h1>stem</h1>
-			<div class="sus">
-				<span><input type="radio" id="stem-1" name="version" value="1"> <label for="stem-1">stem 1</label></span>
-				<span><input type="radio" id="stem-2" name="version" value="2"> <label for="stem-2">stem 2</label></span>
-				<span><input type="radio" id="stem-3" name="version" value="3"> <label for="stem-3">stem 3</label></span>
-				<span><input type="radio" id="stem-0" name="version" value="0"> <label for="stem-0">stem 0</label></span>
+			<div class="sus" id=stem>
+				<span><input type="radio" id="stem-1" name="stem" value="1" checked="true"> <label for="stem-1">stem 1</label></span>
+				<span><input type="radio" id="stem-2" name="stem" value="2"> <label for="stem-2">stem 2</label></span>
+				<span><input type="radio" id="stem-3" name="stem" value="3"> <label for="stem-3">stem 3</label></span>
+				<span><input type="radio" id="stem-0" name="stem" value="0"> <label for="stem-0">stem 0</label></span>
 			</div>
 		</div><div>
 			<h1>specification</h1>
-			<div class="sus">
-				<span><input type="radio" id="specification-BSC" name="specification" value="BSC"> <label for="specification-BSC">basic (BSC)</label></span>
+			<div class="sus" id=specification>
+				<span><input type="radio" id="specification-BSC" name="specification" value="BSC" checked="true"> <label for="specification-BSC">basic (BSC)</label></span>
 				<span><input type="radio" id="specification-CTE" name="specification" value="CTE"> <label for="specification-CTE">contential (CTE)</label></span>
 				<span><input type="radio" id="specification-CSV" name="specification" value="CSV"> <label for="specification-CSV">constitutive (CSV)</label></span>
 				<span><input type="radio" id="specification-OBJ" name="specification" value="OBJ"> <label for="specification-OBJ">objective (OBJ)</label></span>
@@ -46,22 +46,47 @@
 	<div class="row">
 		<div>
 			<h1>root</h1>
-			<div class="sus">
-				<span><input type="text" id="root"> <label for="root">root</label></span>
+			<div class="sus" id=root>
+				<span><input type="text" id="rootval" value="l"> <label for="root">root</label></span>
 			</div>
 		</div><div>
 			<h1>function</h1>
-			<div class="sus">
-				<span><input type="radio" id="function-STA" name="function" value="STA"> <label for="function-STA">stative (STA)</label></span>
+			<div class="sus" id=function>
+				<span><input type="radio" id="function-STA" name="function" value="STA" checked="true"> <label for="function-STA">stative (STA)</label></span>
 				<span><input type="radio" id="function-DYN" name="function" value="DYN"> <label for="function-DYN">dynamic (DYN)</label></span>
 			</div>
 		</div><div>
 			<h1>context</h1>
-			<div class="sus">
-				<span><input type="radio" id="context-EXS" name="context" value="EXS"> <label for="context-EXS">existential (EXS)</label></span>
+			<div class="sus" id=context>
+				<span><input type="radio" id="context-EXS" name="context" value="EXS" checked="true"> <label for="context-EXS">existential (EXS)</label></span>
 				<span><input type="radio" id="context-FNC" name="context" value="FNC"> <label for="context-FNC">functional (FNC)</label></span>
 				<span><input type="radio" id="context-RPS" name="context" value="RPS"> <label for="context-RPS">representative (RPS)</label></span>
 				<span><input type="radio" id="context-AMG" name="context" value="AMG"> <label for="context-AMG">amalgamate (AMG)</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h2 style="flex:0 0 100%; text-align: center;">configuration</h1><br>
+		<div>
+			<h1>plexity</h1>
+			<div class="sus" id=plexity>
+				<span><input type="radio" id="plexity-U" name="plexity" value="U" checked="true"> <label for="plexity-U">uniplex (UPX)</label></span>
+				<span><input type="radio" id="plexity-D" name="plexity" value="D"> <label for="plexity-D">duplex (D-)</label></span>
+				<span><input type="radio" id="plexity-M" name="plexity" value="M"> <label for="plexity-M">multiplex (M-)</label></span>
+			</div>
+		</div><div>
+			<h1>similarity</h1>
+			<div class="sus" id=similarity>
+				<span><input type="radio" id="similarity-S" name="similarity" value="S" checked="true"> <label for="similarity-S">similar (-S-)</label></span>
+				<span><input type="radio" id="similarity-D" name="similarity" value="D"> <label for="similarity-D">dissimilar (-D-)</label></span>
+				<span><input type="radio" id="similarity-F" name="similarity" value="F"> <label for="similarity-F">fuzzy (-F-)</label></span>
+			</div>
+		</div><div>
+			<h1>separability</h1>
+			<div class="sus" id=separability>
+				<span><input type="radio" id="separability-S" name="separability" value="S" checked="true"> <label for="separability-S">separate (-S)</label></span>
+				<span><input type="radio" id="separability-C" name="separability" value="C"> <label for="separability-C">connected (-C)</label></span>
+				<span><input type="radio" id="separability-F" name="separability" value="F"> <label for="separability-F">fused (-F)</label></span>
 			</div>
 		</div>
 	</div>
