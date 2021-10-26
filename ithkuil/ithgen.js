@@ -1,13 +1,14 @@
 //#region vowel sequence definition
 	vSq = {
-		sq1	: ["a",		"ä",		"e",		"i",		"ëi",	   "ö",		"o",		"ü",		"u" ],
+		sq1	   : ["a",		"ä",		"e",		"i",		"ëi",		"ö",		"o",		"ü",		"u" ],
 
-		sq2	: ["ai",	   "au",	   "ei",	   "eu",	   "ëu",	   "ou",	   "oi",	   "iu",	   "ui"],
+		sq2	   : ["ai",		"au",		"ei",		"eu",		"ëu",		"ou",		"oi",		"iu",		"ui"],
 
-		sq3	: ["ia",	   "ie",	   "io",	   "iö",	   "eë",	   "uö",	   "uo",	   "ue",	   "ua"],
-		sq3y   : ["uä",	   "uë",	   "üä",	   "üë",	   "eë",	   "uö",	   "uo",	   "ue",	   "ua"],
-		sq3w   : ["ia",	   "ie",	   "io",	   "iö",	   "eë",	   "öë",	   "öä",	   "ië",	   "iä"],
-		sq4	: ["ao",	   "aö",	   "eo",	   "eö",	   "oë",	   "öe",	   "oe",	   "öa",	   "oa"]
+		sq3	   : ["ia",		"ie",		"io",		"iö",		"eë",		"uö",		"uo",		"ue",		"ua"],
+		sq3y   : ["uä",		"uë",		"üä",		"üë",		"eë",		"uö",		"uo",		"ue",		"ua"],
+		sq3w   : ["ia",		"ie",		"io",		"iö",		"eë",		"öë",		"öä",		"ië",		"iä"],
+		
+		sq4	   : ["ao",		"aö",		"eo",		"eö",		"oë",		"öe",		"oe",		"öa",		"oa"]
 	}
 	vSq.ssq1   = [vSq.sq1 [0],vSq.sq1 [1],vSq.sq1 [2],vSq.sq1 [3],vSq.sq1 [8],vSq.sq1 [7],vSq.sq1 [6],vSq.sq1 [5]	 ];
 	vSq.ssq2   = [vSq.sq2 [0],vSq.sq2 [1],vSq.sq2 [2],vSq.sq2 [3],vSq.sq2 [8],vSq.sq2 [7],vSq.sq2 [6],vSq.sq2 [5]	 ];

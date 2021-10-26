@@ -3,6 +3,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="ith.css">
+
 	<title>Ithgen™</title>
 	<script src="ithgen.js"></script>
 	<script>
@@ -15,6 +18,30 @@
 	</script>
 </head>
 <body>
+	<div class="row" style="display: flex;">
+		<div>
+			<h1>version</h1>
+			<div class="sus">
+				<span><input type="radio" id="version-PRC" name="version" value="PRC"> <label for="version-PRC">processual</label></span>
+				<span><input type="radio" id="version-CPT" name="version" value="CPT"> <label for="version-CPT">completive</label></span>
+			</div>
+		</div><div>
+			<h1>stem</h1>
+			<div class="sus">
+				<span><input type="radio" id="stem-1" name="version" value="1"> <label for="stem-1">stem 1</label></span>
+				<span><input type="radio" id="stem-2" name="version" value="2"> <label for="stem-2">stem 2</label></span>
+				<span><input type="radio" id="stem-3" name="version" value="3"> <label for="stem-3">stem 3</label></span>
+				<span><input type="radio" id="stem-0" name="version" value="0"> <label for="stem-0">stem 0</label></span>
+			</div>
+		</div><div>
+			<h1>root</h1>
+			<div class="sus">
+				<span><input type="text" id="root"> <label for="root">root</label></span>
+			</div>
+		</div>
+	</div>
+
+	<br><hr><hr><br>
 		<h1 id="output">thing</h1>
 		<textarea id="input" rows="15" cols="30">
 {

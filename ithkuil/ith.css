@@ -1,0 +1,24 @@
+div.row, div.sus {
+	display:flex;
+	flex-direction: row;
+}
+div.row, div.row div {
+	border: 2px solid #fff0ad;
+	padding: 5px;
+	border-radius: 10px;
+	margin: 5px;
+}
+div.row div h1 {
+	margin: 15px;
+}
+html {
+	background-color: #d494ff;
+	color:#330547
+}
+div.row div {
+	flex-grow: 1;
+}
+div.sus span {
+	flex-grow: 1;
+	text-align: center;
+}
