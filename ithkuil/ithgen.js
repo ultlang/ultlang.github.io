@@ -134,7 +134,7 @@ function genWord(opts = {}) {
 	//#endregion
 
 	function genSlot2() {
-		slot2 = vSq.sq1 [ 2 * ((stem + 3) % 4) + versions.indexOf(version) ] ;
+		slot2 = vSq.ssq1 [ 2 * ((stem + 3) % 4) + versions.indexOf(version) ] ;
 	}
 	genSlot2()
 
