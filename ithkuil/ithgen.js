@@ -218,7 +218,7 @@ function genWord(opts = {}) {
 		subs = [["pp","mp",false],["tt","nt",false],["kk","nk",false], ["ll","pļ",false],
 				["pb","mb",false],["kg","ng",false],["çy","nd",false],
 				["řř","ňš",false],["rr","ns",false],["rř","nš",false], ["řr","ňs",false],
-				["gm","x",true],  ["gn","ň",true],  ["ngn","ňn",false],["cx","xw",true],
+				["gm","x",true],  ["gn","ň",true],  ["ngn","ňn",false],["çx","xw",true],
 				["bm","f",true],  ["bn","ţ",true],  ["ff","vw",false], ["ţţ","ḑy",false]]
 
 		for (i = 0; i < subs.length; i++) {
