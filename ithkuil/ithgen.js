@@ -215,13 +215,11 @@ function genWord(opts = {}) {
 
 
 		//NOT CORRECT! bm and bn don't have the voiced alternate!
-		subs = [["pp","mp",false],["tt","nt",false],["kk","nk",false],
-				["ll","pļ",false],
-				["řř","ňš",false],["rr","ns",false],["rř","nš",false],["řr","ňs",false],
-				["pb","ng",false],["kg","ng",false],
-				["çy","nd",false],
-				["cx","xw",true], ["gm","x",true],  ["gn","ň",true],  ["bm","f",true],  ["bn","ţ",true],
-				["ţţ","ḑy",false],["ff","vw",false]]
+		subs = [["pp","mp",false],["tt","nt",false],["kk","nk",false], ["ll","pļ",false],
+				["pb","mb",false],["kg","ng",false],["çy","nd",false],
+				["řř","ňš",false],["rr","ns",false],["rř","nš",false], ["řr","ňs",false],
+				["gm","x",true],  ["gn","ň",true],  ["ngn","ňn",false],["cx","xw",true],
+				["bm","f",true],  ["bn","ţ",true],  ["ff","vw",false], ["ţţ","ḑy",false]]
 
 		for (i = 0; i < subs.length; i++) {
 			if (!(subs[i][2] && slot6.length == 2)) {
