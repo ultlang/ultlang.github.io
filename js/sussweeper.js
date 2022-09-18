@@ -244,19 +244,16 @@ function loop() {
 }
 
 canvas.addEventListener('click', function(event) {
-
-	elemLeft = canvas.offsetLeft + canvas.clientLeft,
-	elemTop = canvas.offsetTop + canvas.clientTop,
+	elemLeft = canvas.getClientRects()[0].left;
+	elemTop = canvas.getClientRects()[0].top;
 	x = event.clientX - elemLeft;
 	y = event.clientY - elemTop;
 	clickoid(Math.floor(x / (500/size)) , Math.floor(y / (500/size)));
 }, false);
 
 canvas.addEventListener('contextmenu', function(event) {
-
-
-	elemLeft = canvas.offsetLeft + canvas.clientLeft,
-	elemTop = canvas.offsetTop + canvas.clientTop,
+	elemLeft = canvas.getClientRects()[0].left;
+	elemTop = canvas.getClientRects()[0].top;
 	x = event.clientX - elemLeft;
 	y = event.clientY - elemTop;
 	markoid(Math.floor(x / (500/size)) , Math.floor(y / (500/size)));
