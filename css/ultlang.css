@@ -1,8 +1,8 @@
+/* variables ⁊ fonts*/
 :root {
 	--font: "Inter", "Inter V", "Segoe UI", sans-serif;
 	--headingfont: "Inter Medium", "Inter V Medium", "Inter", "Inter V", "Segoe UI Semibold", "Segoe UI", sans-serif;
 }
-
 @font-face {
 	font-family: ultlfw;
 	src:
@@ -10,6 +10,7 @@
 		url('../fonts/ultlf.woff') format('woff')  */
 }
 
+/* document-wide stuff*/
 html {
 	background-color: var(--bg);
 	font: 20px var(--font);
@@ -20,6 +21,10 @@ main, footer {
 	text-align: center;
 	margin: auto;
 }
+
+a {
+	color: var(--heading);
+}
 p.small {
 	font: 12px var(--font);
 }
@@ -29,9 +34,6 @@ h1 {
 }
 h2{
 	font: 24px var(--headingfont);
-	color: var(--heading);
-}
-a {
 	color: var(--heading);
 }
 hr {
@@ -47,12 +49,6 @@ td, th {
 	border: 1px solid var(--text);
 	padding: 4px 6px;
 }
-ul.nobu {
-	list-style-type:none;
-}
-ul.nobu li {
-	margin-bottom: 5px;
-}
 summary {
 	font: 24px var(--headingfont);
 	color: var(--heading);
@@ -61,6 +57,9 @@ details {
 	margin: 10px;
 }
 
+
+/* specific */
+	/* ultlf */
 .ultlf {
 	font-family: ultlfw;
 	line-height: 1.5;
@@ -73,3 +72,16 @@ p.ultlf, ul.ultlf {
 h1.ultlf {
 	font-size: 32.4pt;
 }
+	/* listoid */
+ul.nobu {
+	list-style-type:none;
+}
+ul.nobu li {
+	margin-bottom: 5px;
+}
+	/* index.html */
+#gibberish {
+	max-height: 1.4em;
+	min-height: 1.4em;
+	margin: 1em auto;
+} 
