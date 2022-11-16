@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<rss version="2.0">
+	<channel>
+	<title>ultlangμblog</title>
+	<description>emma ultlang μblog rss feed</description>
+	<link>http://ultlang.github.io/b/bloglist.html</link>
+	
+<item>
+	<title>titled post [test]</title>
+	<description>ultlang blog post #000: "titled post [test]"</description>
+	<link>http://ultlang.github.io/b/000.html</link>
+	<pubDate>Tue, 15 Nov 2022 21:11:00 GMT</pubDate>
+</item>
+
+<item>
+	<title>real post</title>
+	<description>ultlang blog post #bee: "real post"</description>
+	<link>http://ultlang.github.io/b/bee.html</link>
+	<pubDate>Wed, 16 Nov 2022 15:34:00 GMT</pubDate>
+</item>
+	</channel>
+	</rss>
