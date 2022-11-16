@@ -18,5 +18,12 @@
 	<link>http://ultlang.github.io/b/bee.html</link>
 	<pubDate>Wed, 16 Nov 2022 15:34:00 GMT</pubDate>
 </item>
+
+<item>
+	<title>testing 2</title>
+	<description>ultlang blog post #001: "testing 2"</description>
+	<link>http://ultlang.github.io/b/001.html</link>
+	<pubDate>Wed, 16 Nov 2022 16:00:00 GMT</pubDate>
+</item>
 	</channel>
 	</rss>
