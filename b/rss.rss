@@ -9,6 +9,7 @@
 	<title>titled post [test]</title>
 	<description>ultlang blog post #000: "titled post [test]"</description>
 	<link>http://ultlang.github.io/b/000.html</link>
+	<guid>000</guid>
 	<pubDate>Tue, 15 Nov 2022 21:11:00 GMT</pubDate>
 </item>
 
@@ -16,6 +17,7 @@
 	<title>real post</title>
 	<description>ultlang blog post #bee: "real post"</description>
 	<link>http://ultlang.github.io/b/bee.html</link>
+	<guid>bee</guid>
 	<pubDate>Wed, 16 Nov 2022 15:34:00 GMT</pubDate>
 </item>
 
@@ -23,6 +25,7 @@
 	<title>testing 2</title>
 	<description>ultlang blog post #001: "testing 2"</description>
 	<link>http://ultlang.github.io/b/001.html</link>
+	<guid>001</guid>
 	<pubDate>Wed, 16 Nov 2022 16:00:00 GMT</pubDate>
 </item>
 
@@ -30,6 +33,7 @@
 	<title>aaaaaaaa</title>
 	<description>ultlang blog post #dth: "aaaaaaaa"</description>
 	<link>http://ultlang.github.io/b/dth.html</link>
+	<guid>dth</guid>
 	<pubDate>Tue, 22 Nov 2022 00:00:00 GMT</pubDate>
 </item>
 	</channel>
