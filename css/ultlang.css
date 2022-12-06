@@ -103,3 +103,8 @@ div.grid {
 p.blog {
 	margin-bottom: 0px;
 }
+p.left {
+	text-align: left;
+	padding-left: 10px;
+	white-space: pre;
+}
