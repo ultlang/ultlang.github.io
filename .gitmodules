@@ -1,0 +1,3 @@
+[submodule "synth"]
+	path = synth
+	url = https://github.com/ultlang/synth
