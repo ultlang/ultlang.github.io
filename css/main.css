@@ -1,0 +1,94 @@
+/* variables ⁊ fonts*/
+:root {
+	--font: "Inter", "Inter V", "Segoe UI", sans-serif;
+	--font-heading: "Inter Medium", "Inter V Medium", "Inter", "Inter V", "Segoe UI Semibold", "Segoe UI", sans-serif;
+}
+@font-face {
+	font-family: ultlfw;
+	src: url('../fonts/ultlf.woff2') format('woff2')
+}
+
+
+html {
+	background-color: var(--bg);
+}
+
+body {
+	font: 20px var(--font);
+	color: var(--text);
+	background-color: var(--bg2);
+
+	width: min(48em, 90%);
+	text-align: center;
+
+	margin: 25px auto;
+	border-radius: 25px;
+	padding: 0.05px;
+}
+
+header {
+	margin: 30px;
+}
+footer {
+	margin: 0px 30px 30px;
+}
+
+main {
+	margin: 0px 20px;
+}
+main div {
+	border-radius: 25px;
+	margin: 10px;
+}
+main div#sidebar {
+	background-color: #ddacbe;
+	width: fit-content;
+	padding: 20px;
+}
+
+p {
+	margin: 20px;
+}
+main:first-child {
+	margin-top: 0px;
+}
+main:last-child {
+	margin-bottom: 0px;
+}
+
+
+
+h1 {
+	font: 42px var(--font-heading);
+	color: var(--text-accent);
+}
+h2 {
+	font: 24px var(--font-heading);
+	color: var(--text-accent);
+}
+
+a {
+	color: var(--text-accent);
+}
+
+hr {
+	border-style: none;
+	border-top: 1px solid var(--text-accent);
+	margin:auto
+}
+
+.ultlf {
+	font-family: ultlfw;
+}
+.back {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	text-align: left;
+}
+.nav {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	text-align: right;
+}

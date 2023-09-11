@@ -208,7 +208,7 @@ function loop() {
 		c.font = 30 + "px " + fontsus;
 		c.textAlign = "center";
 		c.textBaseline = "middle"
-		c.fillText("this has to be done to play sound from start. epic",500,550)
+		c.fillText("wow! sound",500,550)
 	} else if (inProgress) {
 		for (x = 0; x < size; x++) {
 			for (y = 0; y < size; y++) {
