@@ -34,16 +34,14 @@ footer {
 }
 
 main {
-	margin: 0px 20px;
-}
-main div {
-	border-radius: 25px;
-	margin: 10px;
+	margin: 0px 30px;
 }
 main div#sidebar {
 	background-color: #ddacbe;
 	width: fit-content;
 	padding: 20px;
+	border-radius: 25px;
+	margin: 10px;
 }
 
 p {
