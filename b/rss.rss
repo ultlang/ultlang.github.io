@@ -60,5 +60,13 @@
 	<guid>http://ultlang.github.io/b/css.html</guid>
 	<pubDate>Wed, 27 Sep 2023 19:12:00 GMT</pubDate>
 </item>
+
+<item>
+	<title>contentful post</title>
+	<description>ultlang blog post #cnt: "contentful post"</description>
+	<link>http://ultlang.github.io/b/cnt.html</link>
+	<guid>http://ultlang.github.io/b/cnt.html</guid>
+	<pubDate>Sat, 27 Sep 2003 19:30:00 GMT</pubDate>
+</item>
 	</channel>
 	</rss>
