@@ -52,5 +52,13 @@
 	<guid>http://ultlang.github.io/b/jb2.html</guid>
 	<pubDate>Mon, 15 May 2023 17:00:00 GMT</pubDate>
 </item>
+
+<item>
+	<title>untitled_css</title>
+	<description>ultlang blog post #css: "untitled_css"</description>
+	<link>http://ultlang.github.io/b/css.html</link>
+	<guid>http://ultlang.github.io/b/css.html</guid>
+	<pubDate>Wed, 27 Sep 2023 19:12:00 GMT</pubDate>
+</item>
 	</channel>
 	</rss>
